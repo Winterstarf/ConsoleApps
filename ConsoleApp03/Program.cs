@@ -12,13 +12,12 @@ namespace ConsoleApp03
             MyMethods.Sequence(Convert.ToDouble(Console.ReadLine()));
         }
     }
-    public static class MyMethods
+    class MyMethods
     {
         public static void Sequence(double eps)
         {
-            List<double> nums = new List<double>();
+            List<double> nums = new List<double>{2};
             int min = 0;
-            nums.Add(2);
             for (int i = 1; ; i++)
             {
                 nums.Add(2 + (1 / nums[i - 1]));
