@@ -1,3 +1,5 @@
+using System;
+
 ﻿namespace ConsoleApp02
 {
     internal class Program
