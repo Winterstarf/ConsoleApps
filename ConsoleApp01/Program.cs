@@ -32,10 +32,10 @@ namespace ConsoleApp01
         static List<int> Marsen(int n)
         {
             List<int> primes = new List<int>();
-            for (int i = 2; i <= n; i++)
+            for (int i = 1; i < n; i++)
             {
                 bool prime = true;
-                for (int j = 2; j <= Math.Sqrt(i); j++)
+                for (int j = 1; j <= Math.Sqrt(i); j++)
                 {
                     if (i % j == 0)
                     {
