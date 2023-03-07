@@ -6,7 +6,13 @@ namespace ConsoleApp04
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            /*имеется аррей стрингов с фамами сотрудников
+             фамилии предопределены (иванов, петров, сидоров)
+            и массив с именами сотрудников (ваня, петя, коля)
+            вывести фам и имя сотрудника*/
+            string[] lastName = new string[3] { "Иванов", "Петров", "Сидоров" };
+            string[] firstName = new string[3] { "Ваня", "Петя", "Коля" };
+            for (int i = 0; i < lastName.Length; i++) Console.WriteLine($"{lastName[i]} {firstName[i]}");
         }
     }
 }
