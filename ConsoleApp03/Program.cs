@@ -23,7 +23,7 @@ namespace ConsoleApp03
                 nums.Add(2 + (1 / nums[i - 1]));
                 if (Math.Abs(nums[i] - nums[i - 1]) < eps)
                 {
-                    min = i + 1;
+                    min = i;
                     break;
                 }
             }
