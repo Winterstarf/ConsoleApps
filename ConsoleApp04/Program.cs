@@ -17,7 +17,7 @@ namespace ConsoleApp04
             int cnt1 = 0, cnt2 = 0, cnt3 = 0; //-,+,0
             for (int i = 0; i < nums.Length; i++)
             {
-                nums[i] = Convert.ToInt32(Console.ReadLine());
+                nums[i] = Convert.ToDouble(Console.ReadLine());
                 if (nums[i] < 0) cnt1++;
                 else if (nums[i] > 0) cnt2++;
                 else cnt3++;
