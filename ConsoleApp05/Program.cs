@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp05
 {
@@ -8,18 +10,14 @@ namespace ConsoleApp05
         {
             /*Дана последовательность чисел, среди которых имеется единственный нуль. Вывести все числа до нуля включительно.*/
             Console.Write("N: ");
-            ArrayZeroFinder(Convert.ToInt32(Console.ReadLine()));
+            Console.WriteLine(string.Join(", ", ArrayZeroFinder(Convert.ToInt32(Console.ReadLine()))));
         }
-        static void ArrayZeroFinder(int n)
+        static List<double> ArrayZeroFinder(int n)
         {
-            double[] nums = new double[n];
-            for (int i = 0; i < nums.Length; i++) nums[i] = Convert.ToDouble(Console.ReadLine());
-            Console.Clear();
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if (nums[i] == 0) break;
-                Console.WriteLine(nums[i]);
-            }
+            List<double> nums = new List<double>();
+            for (int i = 0; i < n; i++) nums.Add(Convert.ToDouble(Console.ReadLine()));
+            nums.RemoveRange(nums.IndexOf(0) + 1, nums.Count - nums.IndexOf(0));
+            return nums;
         }
     }
 }
