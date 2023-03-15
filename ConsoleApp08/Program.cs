@@ -22,7 +22,6 @@ namespace ConsoleApp08
             }
             Console.Clear();
             MatrixSorter(matrix, n, m);
-
         }
         static void MatrixSorter(int[,] matrix, int n, int m)
         {
