@@ -32,14 +32,8 @@ namespace ConsoleApp08
                 int max = matrix[i, 0];
                 for (int j = 0; j < m; j++)
                 {
-                    if (matrix[i, j] < min)
-                    {
-                        min = matrix[i, j];
-                    }
-                    if (matrix[i, j] > max)
-                    {
-                        max = matrix[i, j];
-                    }
+                    if (matrix[i, j] < min) min = matrix[i, j];
+                    if (matrix[i, j] > max) max = matrix[i, j];
                 }
                 Console.WriteLine($"Min {i+1}: {min}");
                 Console.WriteLine($"Маx {i+1}: {max}");
