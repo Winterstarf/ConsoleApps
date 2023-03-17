@@ -12,7 +12,12 @@ namespace ConsoleApp08
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Write("Количество столбцов: ");
             int m = Convert.ToInt32(Console.ReadLine());
-            MatrixMethods.TransponedMatrix(MatrixMethods.ShowSortedMatrix(MatrixMethods.ShowMatrix(MatrixMethods.MatrixMinMax(MatrixMethods.MatrixInput(n, m)))));
+            int[,] matrix = MatrixMethods.MatrixInput(n, m);
+            Console.WriteLine("Оригинальная матрица");
+            MatrixMethods.ShowMatrix(matrix);
+            MatrixMethods.MatrixMinMax(matrix);
+            MatrixMethods.ShowSortedMatrix(matrix);
+            MatrixMethods.TransponedMatrix(matrix);
         }
     }
     public class MatrixMethods
@@ -28,7 +33,7 @@ namespace ConsoleApp08
             Console.Clear();
             return matrix;
         }
-        public static int[,] MatrixMinMax(int[,] matrix)
+        public static void MatrixMinMax(int[,] matrix)
         {
             int min, max, n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1), temp = 0;
             for (int i = 0; i < n; i++)
@@ -52,20 +57,17 @@ namespace ConsoleApp08
                     temp = 0;
                 }
             }
-            return matrix;
         }
-        public static int[,] ShowMatrix(int[,] matrix)
+        public static void ShowMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
-            Console.WriteLine("Оригинальная матрица");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++) Console.Write($"{matrix[i, j]}\t");
                 Console.WriteLine();
             }
-            return matrix;
         }
-        public static int[,] ShowSortedMatrix(int[,] matrix)
+        public static void ShowSortedMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
             List<int> sorted = new List<int>(m);
@@ -78,7 +80,6 @@ namespace ConsoleApp08
                 Console.WriteLine();
                 sorted.Clear();
             }
-            return matrix;
         }
         public static void TransponedMatrix(int[,] matrix)
         {
@@ -89,6 +90,35 @@ namespace ConsoleApp08
                 for (int j = 0; j < n; j++) Console.Write($"{matrix[j, i]}\t");
                 Console.WriteLine();
             }
+        }
+        public static int MatrixTrack(int[,] matrix)
+        {
+            int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1), tracksum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (i == j) tracksum += matrix[i, j];//гл. диагональ
+                    else if (j == n - i - 1) tracksum = matrix[i, j]; //поб. диагональ
+                }
+            }
+            return tracksum;
+        }
+        public static int[,] MatrixEvenOddRowsTransform(int[,] matrix)
+        {
+            int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
+            int[,] transformedMatrix = new int[n, m];
+            int track = MatrixTrack(matrix);
+            if (track == 0) track = 1;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; i < n; i++)
+                {
+                    if (matrix[i, j] % 2 == 0) transformedMatrix[i, j] = matrix[i, j] / track;
+                    else transformedMatrix[i, j] = matrix[i, j];
+                }
+            }
+            return transformedMatrix;
         }
     }
 }
