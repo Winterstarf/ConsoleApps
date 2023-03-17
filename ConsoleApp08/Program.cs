@@ -12,20 +12,23 @@ namespace ConsoleApp08
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Write("Количество столбцов: ");
             int m = Convert.ToInt32(Console.ReadLine());
-            TransponedMatrix(ShowSortedMatrix(ShowMatrix(MatrixMinMax(MatrixInput(n, m)))));
+            MatrixMethods.TransponedMatrix(MatrixMethods.ShowSortedMatrix(MatrixMethods.ShowMatrix(MatrixMethods.MatrixMinMax(MatrixMethods.MatrixInput(n, m)))));
         }
-        static int[,] MatrixInput(int n, int m)
+    }
+    public class MatrixMethods
+    {
+        public static int[,] MatrixInput(int n, int m)
         {
             int[,] matrix = new int[n, m];
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine($"Введите элементы {i+1}-й строки:");
+                Console.WriteLine($"Введите элементы {i + 1}-й строки:");
                 for (int j = 0; j < m; j++) matrix[i, j] = Convert.ToInt32(Console.ReadLine());
             }
             Console.Clear();
             return matrix;
         }
-        static int[,] MatrixMinMax(int[,] matrix)
+        public static int[,] MatrixMinMax(int[,] matrix)
         {
             int min, max, n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1), temp = 0;
             for (int i = 0; i < n; i++)
@@ -51,7 +54,7 @@ namespace ConsoleApp08
             }
             return matrix;
         }
-        static int[,] ShowMatrix(int[,] matrix)
+        public static int[,] ShowMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
             Console.WriteLine("Оригинальная матрица");
@@ -62,7 +65,7 @@ namespace ConsoleApp08
             }
             return matrix;
         }
-        static int[,] ShowSortedMatrix(int[,] matrix)
+        public static int[,] ShowSortedMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
             List<int> sorted = new List<int>(m);
@@ -77,7 +80,7 @@ namespace ConsoleApp08
             }
             return matrix;
         }
-        static void TransponedMatrix(int[,] matrix)
+        public static void TransponedMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
             Console.WriteLine("Транспонированная матрица (оригинальной)");
