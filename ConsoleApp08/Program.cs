@@ -61,7 +61,6 @@ namespace ConsoleApp08
             }
             return matrix;
         }
-
         static void ShowSortedMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
