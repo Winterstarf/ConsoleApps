@@ -12,7 +12,7 @@ namespace ConsoleApp08
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Write("Количество столбцов: ");
             int m = Convert.ToInt32(Console.ReadLine());
-            ShowSortedMatrix(MatrixMinMax(CustomMatrix(n, m)));
+            ShowSortedMatrix(ShowMatrix(MatrixMinMax(CustomMatrix(n, m))));
         }
         static int[,] CustomMatrix(int n, int m)
         {
@@ -50,10 +50,23 @@ namespace ConsoleApp08
             }
             return matrix;
         }
+        static int[,] ShowMatrix(int[,] matrix)
+        {
+            int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
+            Console.WriteLine("Оригинальная матрица");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++) Console.Write($"{matrix[i, j]}\t");
+                Console.WriteLine();
+            }
+            return matrix;
+        }
+
         static void ShowSortedMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
             List<int> sorted = new List<int>(m);
+            Console.WriteLine("Отсортированная матрица: ");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++) sorted.Add(matrix[i, j]);
