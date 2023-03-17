@@ -12,9 +12,9 @@ namespace ConsoleApp08
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Write("Количество столбцов: ");
             int m = Convert.ToInt32(Console.ReadLine());
-            ShowSortedMatrix(ShowMatrix(MatrixMinMax(CustomMatrix(n, m))));
+            TransponedMatrix(ShowSortedMatrix(ShowMatrix(MatrixMinMax(MatrixInput(n, m)))));
         }
-        static int[,] CustomMatrix(int n, int m)
+        static int[,] MatrixInput(int n, int m)
         {
             int[,] matrix = new int[n, m];
             for (int i = 0; i < n; i++)
@@ -22,6 +22,7 @@ namespace ConsoleApp08
                 Console.WriteLine($"Введите элементы {i+1}-й строки:");
                 for (int j = 0; j < m; j++) matrix[i, j] = Convert.ToInt32(Console.ReadLine());
             }
+            Console.Clear();
             return matrix;
         }
         static int[,] MatrixMinMax(int[,] matrix)
@@ -61,11 +62,11 @@ namespace ConsoleApp08
             }
             return matrix;
         }
-        static void ShowSortedMatrix(int[,] matrix)
+        static int[,] ShowSortedMatrix(int[,] matrix)
         {
             int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
             List<int> sorted = new List<int>(m);
-            Console.WriteLine("Отсортированная матрица: ");
+            Console.WriteLine("Отсортированная матрица");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++) sorted.Add(matrix[i, j]);
@@ -73,6 +74,17 @@ namespace ConsoleApp08
                 for (int j = 0; j < m; j++) Console.Write($"{sorted[j]}\t");
                 Console.WriteLine();
                 sorted.Clear();
+            }
+            return matrix;
+        }
+        static void TransponedMatrix(int[,] matrix)
+        {
+            int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
+            Console.WriteLine("Транспонированная матрица (оригинальной)");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++) Console.Write($"{matrix[j, i]}\t");
+                Console.WriteLine();
             }
         }
     }
