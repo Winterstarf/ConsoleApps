@@ -37,7 +37,11 @@ namespace ConsoleApp08
                     if (matrix[i, j] < min) min = matrix[i, j];
                     if (matrix[i, j] > max) max = matrix[i, j];
                 }
-                if (temp == 0) Console.WriteLine($"В строке {i + 1} числа одинаковые");
+                if (temp == 0)
+                {
+                    Console.WriteLine($"В строке {i + 1} числа одинаковые");
+                    temp = m;
+                }
                 else Console.WriteLine($"Мин. в строке {i + 1} = {min}, макс. = {max}");
             }
         }
