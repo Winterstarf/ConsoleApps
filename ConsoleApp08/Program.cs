@@ -12,7 +12,7 @@ namespace ConsoleApp08
             int n = Convert.ToInt32(Console.ReadLine());
             Console.Write("Количество столбцов: ");
             int m = Convert.ToInt32(Console.ReadLine());
-            MatrixMinMax(CustomMatrix(n, m));
+            ShowSortedMatrix(MatrixMinMax(CustomMatrix(n, m)));
         }
         static int[,] CustomMatrix(int n, int m)
         {
@@ -24,7 +24,7 @@ namespace ConsoleApp08
             }
             return matrix;
         }
-        static void MatrixMinMax(int[,] matrix)
+        static int[,] MatrixMinMax(int[,] matrix)
         {
             int min, max, n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1), temp = 0;
             for (int i = 0; i < n; i++)
@@ -47,6 +47,20 @@ namespace ConsoleApp08
                     Console.WriteLine($"Мин. в строке {i + 1} = {min}, макс. = {max}");
                     temp = 0;
                 }
+            }
+            return matrix;
+        }
+        static void ShowSortedMatrix(int[,] matrix)
+        {
+            int n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1);
+            List<int> sorted = new List<int>(m);
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++) sorted.Add(matrix[i, j]);
+                sorted.Sort();
+                for (int j = 0; j < m; j++) Console.Write($"{sorted[j]}\t");
+                Console.WriteLine();
+                sorted.Clear();
             }
         }
     }
