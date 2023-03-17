@@ -26,23 +26,27 @@ namespace ConsoleApp08
         }
         static void MatrixMinMax(int[,] matrix)
         {
-            int min, max, n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1), temp = m;
+            int min, max, n = matrix.GetUpperBound(0) + 1, m = matrix.GetLength(1), temp = 0;
             for (int i = 0; i < n; i++)
             {
                 min = matrix[i, 0];
                 max = matrix[i, 0];
                 for (int j = 0; j < m; j++)
                 {
-                    if (matrix[i, j] == min && matrix[i, j] == max) temp--;
+                    if (matrix[i, j] == min && matrix[i, j] == max) temp++;
                     if (matrix[i, j] < min) min = matrix[i, j];
                     if (matrix[i, j] > max) max = matrix[i, j];
                 }
-                if (temp == 1 || temp == 0)
+                if (temp == m)
                 {
                     Console.WriteLine($"В строке {i + 1} числа одинаковые");
-                    temp = m;
+                    temp = 0;
                 }
-                else Console.WriteLine($"Мин. в строке {i + 1} = {min}, макс. = {max}");
+                else if (temp != m)
+                {
+                    Console.WriteLine($"Мин. в строке {i + 1} = {min}, макс. = {max}");
+                    temp = 0;
+                }
             }
         }
     }
