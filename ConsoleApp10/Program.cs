@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ConsoleApp10
 {
@@ -20,7 +18,7 @@ namespace ConsoleApp10
                     {
                         int num = Convert.ToInt32(splitedInput[i]);
                         if (num == 0 || num < 0 || num > 4) throw new Exception("не может быть такого курса");
-                        kursnums[0] = num;
+                        kursnums[i] = num;
                     }
                     int[,] stud = College.StudNum();
                     Console.WriteLine($"Сумма студентов всех групп введённого курса(-ов): {College.ShowStudSum(stud, kursnums)}");
@@ -36,6 +34,7 @@ namespace ConsoleApp10
             }
         }
     }
+
     class College
     {
         public static int[,] StudNum()
@@ -48,15 +47,21 @@ namespace ConsoleApp10
             }
             return stud;
         }
+
         public static int ShowStudSum(int[,] stud, int[] nums)
         {
             int sum = 0;
             for (int k = 0; k < nums.Length; k++)
             {
-                k = nums[k];
-                for (int j = 0; j < stud.GetLength(1); j++)
+                for (int i = 0; i < stud.GetLength(0); i++)
                 {
-                    sum += stud[k, j];
+                    if (nums[k] == i + 1)
+                    {
+                        for (int j = 0; j < stud.GetLength(1); j++)
+                        {
+                            sum += stud[i, j];
+                        }
+                    }
                 }
             }
             return sum;
