@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NCalc;
 
-namespace WinFormsApp01
+namespace DichotomyApp
 {
     internal static class Program
     {

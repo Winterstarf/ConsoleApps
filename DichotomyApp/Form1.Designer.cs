@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp01
+﻿namespace DichotomyApp
 {
     partial class Form1
     {
