@@ -40,7 +40,7 @@ namespace ConsoleApp11
             }
         }
     }
-    class MyMethods : MatrixMethods
+    public class MyMethods : MatrixMethods
     {
         public static int[,] BinaryMatrix(int[,] matrix)
         {
