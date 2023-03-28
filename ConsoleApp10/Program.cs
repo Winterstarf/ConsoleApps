@@ -23,7 +23,6 @@ namespace ConsoleApp10
                         if (num <= 0 || num > 4) throw new Exception($"курса {num} не существует");
                         inputInt[i] = num;
                     }
-                    Array.Sort(inputInt);
                     
                     if (inputInt.Length >= 5) throw new Exception("число введённых курсов больше 4-х");
                     if (inputInt.Count() != inputInt.Distinct().Count()) throw new Exception("повторяющиеся номера курсов");
