@@ -11,19 +11,19 @@ namespace ConsoleApp10
                 try
                 {
                     Console.WriteLine("Номер(-а) курса(-ов) через пробел: ");
-                    string input = Console.ReadLine();
-                    string[] splitedInput = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                    int[] kursnums = new int[splitedInput.Length]; //получение инпута от юзера и вкладывание значений в массив kursnums
+                    string inputString = Console.ReadLine();
+                    string[] inputSplited = inputString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    int[] inputInt = new int[inputSplited.Length]; //получение инпута от юзера и вкладывание значений в массив kursnums
 
-                    for (int i = 0; i < splitedInput.Length; i++)
+                    for (int i = 0; i < inputSplited.Length; i++)
                     {
-                        int num = Convert.ToInt32(splitedInput[i]);
-                        if (num == 0 || num < 0 || num > 4) throw new Exception("не может быть такого курса (или введено больше 4-х)");
-                        kursnums[i] = num;
+                        int num = Convert.ToInt32(inputSplited[i]);
+                        if (num <= 0 || num > 4) throw new Exception("не может быть такого курса (или введено больше 4-х)");
+                        inputInt[i] = num;
                     }
-                    int[,] stud = College.StudNum();
+                    int[,] studs = College.StudNum();
 
-                    Console.WriteLine($"Сумма студентов всех групп введённого курса(-ов): {College.ShowStudSum(stud, kursnums)}");
+                    Console.WriteLine($"Сумма студентов всех групп введённого курса(-ов): {College.ShowStudSum(studs, inputInt)}");
                     Console.ReadKey();
                     Console.Clear();
                 }
