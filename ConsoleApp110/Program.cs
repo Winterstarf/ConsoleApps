@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsoleApp10
+namespace StudentsGroupsApp
 {
     internal class Program
     {
