@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ConsoleApp08;
 
 namespace ConsoleApp11
@@ -18,16 +19,16 @@ namespace ConsoleApp11
                     if (input == "exit") System.Environment.Exit(0);
                     if (!int.TryParse(input, out int n) || string.IsNullOrWhiteSpace(input) || n <= 0) throw new Exception("введено пустое или отрицательное число");
                     
-                    int[,] matrix = MyMethods.MatrixInput(n, n);
+                    int[,] matrix = MatrixMethods.MatrixInput(n, n);
                     Console.WriteLine("Оригинальная матрица: ");
-                    MyMethods.ShowMatrix(matrix);
+                    MatrixMethods.ShowMatrix(matrix);
 
-                    int[,] binaryMatrix = MyMethods.BinaryMatrix(matrix);
+                    int[,] binaryMatrix = MatrixMethods.BinaryMatrix(matrix);
                     Console.WriteLine("Матрица с нулями и единицами: ");
-                    MyMethods.ShowMatrix(binaryMatrix);
+                    MatrixMethods.ShowMatrix(binaryMatrix);
 
                     Console.WriteLine("Матрица с эл. под главной диагональю: ");
-                    MyMethods.ShowUnderMainDiagonal(binaryMatrix);
+                    MatrixMethods.ShowUnderMainDiagonal(binaryMatrix);
 
                     Console.ReadKey();
                     Console.Clear();
@@ -41,7 +42,7 @@ namespace ConsoleApp11
             }
         }
     }
-    public class MyMethods : MatrixMethods
+    public class MatrixMethods
     {
         public static int[,] BinaryMatrix(int[,] matrix)
         {
@@ -71,5 +72,6 @@ namespace ConsoleApp11
                 Console.WriteLine();
             }
         }
+
     }
 }
