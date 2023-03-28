@@ -7,6 +7,7 @@ namespace ConsoleApp01
     {
         static void Main(string[] args)
         {
+            /*найти марсеновы числа*/
             while (true)
             {
                 try
