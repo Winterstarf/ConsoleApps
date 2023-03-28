@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleApp06
+namespace ConsoleApp17
 {
     internal class Program
     {
