@@ -10,10 +10,13 @@ namespace ConsoleApp08
         {
             Console.Write("Количество строк: ");
             int n = Convert.ToInt32(Console.ReadLine());
+            
             Console.Write("Количество столбцов: ");
             int m = Convert.ToInt32(Console.ReadLine());
+            
             int[,] matrix = MatrixMethods.MatrixInput(n, m);
             Console.WriteLine("Оригинальная матрица");
+            
             MatrixMethods.ShowMatrix(matrix);
             MatrixMethods.MatrixMinMax(matrix);
             MatrixMethods.ShowSortedMatrix(matrix);
