@@ -13,8 +13,9 @@ namespace ConsoleApp11
                 {
                     /*дана квадратная матрица (элементы вводит юзер), записать вместо отриц. эл. нули, заместо положит. единицы,
                     вывести на печать элементы под гл. диагональю*/
-                    Console.Write("N: ");
+                    Console.Write("N (exit чтобы закрыть): ");
                     string input = Console.ReadLine();
+                    if (input == "exit") System.Environment.Exit(0);
                     if (!int.TryParse(input, out int n) || string.IsNullOrWhiteSpace(input) || n <= 0) throw new Exception("введено пустое или отрицательное число");
                     
                     int[,] matrix = MyMethods.MatrixInput(n, n);
