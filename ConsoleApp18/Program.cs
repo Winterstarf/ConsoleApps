@@ -1,4 +1,5 @@
 ﻿using System;
+using MatrixMethods;
 
 namespace ConsoleApp18
 {
@@ -8,5 +9,9 @@ namespace ConsoleApp18
         {
             Console.WriteLine("Hello World!");
         }
+    }
+    class MyMethods : MatrixMethods.MatrixMethods
+    {
+
     }
 }
