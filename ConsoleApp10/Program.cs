@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp10
 {
@@ -18,12 +20,17 @@ namespace ConsoleApp10
                     for (int i = 0; i < inputSplited.Length; i++)
                     {
                         int num = Convert.ToInt32(inputSplited[i]);
-                        if (num <= 0 || num > 4) throw new Exception("не может быть такого курса (или введено больше 4-х)");
+                        if (num <= 0 || num > 4) throw new Exception($"курса {num} не существует");
                         inputInt[i] = num;
                     }
+                    Array.Sort(inputInt);
+                    
+                    if (inputInt.Length >= 5) throw new Exception("число введённых курсов больше 4-х");
+                    if (inputInt.Count() != inputInt.Distinct().Count()) throw new Exception("повторяющиеся номера курсов");
                     int[,] studs = College.StudNum();
 
-                    Console.WriteLine($"Сумма студентов всех групп введённого курса(-ов): {College.ShowStudSum(studs, inputInt)}");
+                    College.ShowGroupsByCourse(studs);
+                    Console.WriteLine($"Сумма студентов всех групп введённого курса(-ов): {College.ShowInputSum(studs, inputInt)}");
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -48,19 +55,21 @@ namespace ConsoleApp10
             }
             return stud;
         }
-        public static int ShowStudSum(int[,] stud, int[] nums) //возвращает sum студентов групп введённых курсов (массив nums)
+        public static void ShowGroupsByCourse(int[,] stud)
+        {
+            for (int i = 0; i < stud.GetLength(0); i++)
+            {
+                List<int> list = new List<int>();
+                for (int j = 0; j < stud.GetLength(1); j++) list.Add(stud[i, j]);
+                Console.WriteLine($"Курс {i+1}: {string.Join(' ', list)}");
+                list.Clear();
+            }
+            Console.WriteLine();
+        }
+        public static int ShowInputSum(int[,] stud, int[] nums) //возвращает sum студентов групп введённых курсов (массив nums)
         {
             int sum = 0;
-            for (int k = 0; k < nums.Length; k++)
-            {
-                for (int i = 0; i < stud.GetLength(0); i++)
-                {
-                    if (nums[k] == i + 1) //+1 т.к. в stud курсы от 0 до 3, а в nums могут быть только от 1 до 4
-                    {  
-                        for (int j = 0; j < stud.GetLength(1); j++) sum += stud[i, j];
-                    }
-                }
-            }
+            foreach (int i in nums) for (int j = 0; j < stud.GetLength(1); j++) sum += stud[i - 1, j];
             return sum;
         }
     }
