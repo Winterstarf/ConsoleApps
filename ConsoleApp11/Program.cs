@@ -15,7 +15,7 @@ namespace ConsoleApp11
                     вывести на печать элементы под гл. диагональю*/
                     Console.Write("N: ");
                     string input = Console.ReadLine();
-                    if (!int.TryParse(input, out int n) || string.IsNullOrEmpty(input) || n <= 0) throw new Exception("введено пустое или отрицательное число");
+                    if (!int.TryParse(input, out int n) || string.IsNullOrWhiteSpace(input) || n <= 0) throw new Exception("введено пустое или отрицательное число");
                     
                     int[,] matrix = MyMethods.MatrixInput(n, n);
                     Console.WriteLine("Оригинальная матрица: ");
