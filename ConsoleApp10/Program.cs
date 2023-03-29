@@ -14,8 +14,9 @@ namespace ConsoleApp10
 
                 Console.Write("А или Б: ");
                 string method = Console.ReadLine();
-                double res;
+                method = method.ToUpper();
 
+                double res;
                 if (method == "А" || method == "A" || method == "1") res = Sequence.SeqSumA(n);
                 else if (method == "Б" || method == "B" || method == "2") res = Sequence.SeqSumB(n);
                 else throw new Exception("несуществующий метод");
@@ -33,13 +34,13 @@ namespace ConsoleApp10
         public static double SeqSumA(int n)
         {
             double sum = 0;
-            for (int i = 1; i < n; i++) sum += (Math.Pow(10, i)) / (ConsoleApp05.MyMethods.Factorial(i));
+            for (int i = 1; i <= n; i++) sum += Math.Pow(10.0, i) / ConsoleApp05.MyMethods.Factorial(i);
             return sum;
         }
         public static double SeqSumB(int n)
         {
             double sum = 0;
-            for (int i = 1; i < n; i++) sum += (1) / ((3 * i - 2) * (3 * i + 1));
+            for (int i = 1; i <= n; i++) sum += 1.0 / ((3 * i - 2) * (3 * i + 1));
             return sum;
         }
     }
