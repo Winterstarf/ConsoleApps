@@ -10,11 +10,15 @@ namespace ConsoleApp06
             {
                 Console.Write("x: ");
                 string input = Console.ReadLine();
-                if (!double.TryParse(input, out double x) || Math.Abs(x) >= 1 || string.IsNullOrWhiteSpace(input)) throw new Exception("x больше или равен 1 или введен пустой символ");
+                if (input.Contains('.')) input = input.Replace('.', ',');
+                
+                if (string.IsNullOrWhiteSpace(input) || string.IsNullOrEmpty(input)) throw new Exception("введён пустой символ");
+                if (!double.TryParse(input, out double x) || Math.Abs(x) >= 1) throw new Exception("x должен быть в диапазоне от -1 до 1 не включительно");
 
                 Console.WriteLine($"Сумма ряда при x={x}: {Sequence.Finder(x)}");
             }
             catch (Exception ex)
+
             {
                 Console.WriteLine($"Ошибка: {ex.Message}");
                 Console.ReadKey();
