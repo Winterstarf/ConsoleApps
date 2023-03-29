@@ -17,9 +17,10 @@ namespace ConsoleApp05
     {
         public static double MyCos(double x)
         {
+            const int border = 10;
             double sum = 1;
             double term = 1;
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= border; i++)
             {
                 term *= (-1) * x * x / ((2 * i - 1) * 2 * i);
                 sum += term * 1;
