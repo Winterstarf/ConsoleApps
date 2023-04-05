@@ -36,7 +36,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquareMatrixApp", "SquareMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp19", "ConsoleApp19\ConsoleApp19.csproj", "{F54A6EAD-83B9-40B1-B594-9AE02A7E16F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp07", "ConsoleApp07\ConsoleApp07.csproj", "{47B12E7D-CA6F-43ED-9F65-B4D51DC3F18E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp07", "ConsoleApp07\ConsoleApp07.csproj", "{47B12E7D-CA6F-43ED-9F65-B4D51DC3F18E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "unknownapp", "unknownapp\unknownapp.csproj", "{781D5275-8EC4-4733-879D-29ED924F53D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unknownapp2", "unknownapp2\unknownapp2.csproj", "{CAE37615-3FEC-467F-BD3F-30BFB6C26078}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +108,14 @@ Global
 		{47B12E7D-CA6F-43ED-9F65-B4D51DC3F18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B12E7D-CA6F-43ED-9F65-B4D51DC3F18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B12E7D-CA6F-43ED-9F65-B4D51DC3F18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781D5275-8EC4-4733-879D-29ED924F53D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781D5275-8EC4-4733-879D-29ED924F53D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781D5275-8EC4-4733-879D-29ED924F53D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781D5275-8EC4-4733-879D-29ED924F53D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE37615-3FEC-467F-BD3F-30BFB6C26078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE37615-3FEC-467F-BD3F-30BFB6C26078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE37615-3FEC-467F-BD3F-30BFB6C26078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE37615-3FEC-467F-BD3F-30BFB6C26078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
