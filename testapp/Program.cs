@@ -2,42 +2,64 @@
 
 namespace testapp
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Тестирование работы индексаторов: ");
-            Arr x = new Arr(3);
-            x[0] = 5;
-            Console.WriteLine(x[1]);
-            x.Print();
+            Console.WriteLine("Drob - test");
+
+            Drob x = new Drob(2, 5);
+            x.print();
+
+            Drob y = new Drob();
+            y = -x;
+            y.print();
+
+            Drob z = new Drob();
+            z = ++x;
+            z.print();
         }
     }
-    class Arr
+    public class Drob
     {
-        int n;
-        double[] x;
-        public Arr()
+        int a; //числитель
+        int b; //знаменатель
+        public Drob()
         {
-            n = 1;
-            x = new double[n];
-            x[0] = 1;
+            a = 0;
+            b = 1;
         }
-        public Arr(int n0)
+        public Drob(int a0, int b0)
         {
-            n = n0;
-            if (n < 1) n = 1;
-            x = new double[n];
-            for (int i = 0; i < n; i++) x[i] = 1 + i;
+            a = a0;
+            b = b0;
+            if (b == 0)
+            {
+                Console.WriteLine("недопустимое значение b");
+            }
+            else
+            {
+                a = -a;
+                b = -b;
+            }
         }
-        public double this[int i]
+        public static Drob operator -(Drob x) //смена знака a
         {
-            get { return x[i]; }
-            set { x[i] = value; }
+            Drob t = new Drob();
+            t.a = -x.a;
+            t.b = x.b;
+            return t;
         }
-        public void Print()
+        public static Drob operator ++(Drob x)
         {
-            Console.WriteLine("Массив крутой: " + string.Join(", ", x));
+            Drob t = new Drob();
+            t.a = ++x.a;
+            t.b = x.b;
+            return t;
+        }
+        public void print()
+        {
+            Console.WriteLine("{0}/{1}", a, b);
         }
     }
 }
