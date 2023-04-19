@@ -6,7 +6,7 @@ namespace testapp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Тестирование работы индексаторов");
+            Console.WriteLine("Тестирование работы индексаторов: ");
             Arr x = new Arr(3);
             x[0] = 5;
             Console.WriteLine(x[1]);
@@ -37,7 +37,7 @@ namespace testapp
         }
         public void Print()
         {
-            Console.WriteLine("Массив: " + string.Join(", ", x));
+            Console.WriteLine("Массив крутой: " + string.Join(", ", x));
         }
     }
 }
