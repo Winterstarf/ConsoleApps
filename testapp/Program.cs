@@ -21,7 +21,7 @@ namespace testapp
                 if (!int.TryParse(inputSoccer, out int intSoccer) || intSoccer <= 0 || intSoccer > 11) throw new Exception("Error: there's only eleven players");
                 else if (inputSoccer == string.Empty) throw new Exception("Error: the string you entered is empty");
                 Soccerman s = new Soccerman();
-                Console.WriteLine($"Футболист - {s[intSoccer]}";
+                Console.WriteLine($"Футболист - {s[intSoccer]}");
             }
             catch (Exception ex)
             {
