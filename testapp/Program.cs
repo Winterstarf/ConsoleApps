@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace testapp
 {
@@ -6,60 +7,57 @@ namespace testapp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Drob - test");
+            try
+            {
+                Console.Write("день: ");
+                string inputDays = Console.ReadLine();
+                if (!int.TryParse(inputDays, out int intDays) || intDays <= 0 || intDays > 7) throw new Exception("Error: there's only seven days in a week bozo");
+                else if (inputDays == string.Empty) throw new Exception("Error: the string you entered is empty");
+                DaysOfWeek day = (DaysOfWeek)intDays;
+                Console.WriteLine($"Сегодня - {day}");
 
-            Drob x = new Drob(2, 5);
-            x.print();
-
-            Drob y = new Drob();
-            y = -x;
-            y.print();
-
-            Drob z = new Drob();
-            z = ++x;
-            z.print();
+                Console.Write("футбик: ");
+                string inputSoccer = Console.ReadLine();
+                if (!int.TryParse(inputSoccer, out int intSoccer) || intSoccer <= 0 || intSoccer > 11) throw new Exception("Error: there's only eleven players");
+                else if (inputSoccer == string.Empty) throw new Exception("Error: the string you entered is empty");
+                Soccerman s = new Soccerman();
+                Console.WriteLine($"Футболист - {s[intSoccer]}";
+            }
+            catch (Exception ex)
+            {
+                Console.Clear();
+                Console.WriteLine(ex.Message);
+            }
+        }
+        enum DaysOfWeek
+        {
+            понедельник = 1,
+            вторник,
+            среда,
+            четверг,
+            пятница,
+            суббота,
+            воскресенье
         }
     }
-    public class Drob
+    class Soccerman //класс футболера который содержит имя и номер футболера и класс футбол тимы, хранящий 11 плееров в массиве и индексатор
     {
-        int a; //числитель
-        int b; //знаменатель
-        public Drob()
+        private string[] Players = {
+            "Иван Иванович (1)",
+            "Степан Михайлович (2)",
+            "Михаил Розенбан (3)",
+            "Игорь Боберт (4)",
+            "Робин Бобин (5)",
+            "Демиан Фрут (6)",
+            "Валерий Путь (7)",
+            "Саймон Райли (8)",
+            "Соуп МакТавиш (9)",
+            "Лионель Месси (10)",
+            "Джон Прайс (11)"};
+        public string this[int i]
         {
-            a = 0;
-            b = 1;
-        }
-        public Drob(int a0, int b0)
-        {
-            a = a0;
-            b = b0;
-            if (b == 0)
-            {
-                Console.WriteLine("недопустимое значение b");
-            }
-            else
-            {
-                a = -a;
-                b = -b;
-            }
-        }
-        public static Drob operator -(Drob x) //смена знака a
-        {
-            Drob t = new Drob();
-            t.a = -x.a;
-            t.b = x.b;
-            return t;
-        }
-        public static Drob operator ++(Drob x)
-        {
-            Drob t = new Drob();
-            t.a = ++x.a;
-            t.b = x.b;
-            return t;
-        }
-        public void print()
-        {
-            Console.WriteLine("{0}/{1}", a, b);
+            get { return Players[i - 1]; }
+            set { Players[i - 1] = value; }
         }
     }
 }
