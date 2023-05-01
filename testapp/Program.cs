@@ -11,9 +11,9 @@ namespace testapp
             {
                 Console.Write("день: ");
                 string inputDays = Console.ReadLine();
-                if (!int.TryParse(inputDays, out int intDays) || intDays <= 0 || intDays > 7) throw new Exception("Error: there's only seven days in a week bozo");
+                if (!int.TryParse(inputDays, out int intDays) || intDays <= 0 || intDays > 31) throw new Exception("Error: there's only 31 days in a month");
                 else if (inputDays == string.Empty) throw new Exception("Error: the string you entered is empty");
-                DaysOfWeek day = (DaysOfWeek)intDays;
+                DaysOfWeek day = (DaysOfWeek)(intDays % 7);
                 Console.WriteLine($"Сегодня - {day}");
 
                 Console.Write("футбик: ");
