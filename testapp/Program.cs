@@ -5,16 +5,33 @@ namespace testapp
 {
     class Program
     {
+        enum DaysOfWeek
+        {
+            понедельник,
+            вторник,
+            среда,
+            четверг,
+            пятница,
+            суббота,
+            воскресенье
+        }
         static void Main(string[] args)
         {
             try
             {
-                Console.Write("день: ");
-                string inputDays = Console.ReadLine();
-                if (!int.TryParse(inputDays, out int intDays) || intDays <= 0 || intDays > 31) throw new Exception("Error: there's only 31 days in a month");
-                else if (inputDays == string.Empty) throw new Exception("Error: the string you entered is empty");
-                DaysOfWeek day = (DaysOfWeek)(intDays % 7);
-                Console.WriteLine($"Сегодня - {day}");
+                Console.Write("день 1: ");
+                string inputDays1 = Console.ReadLine();
+                if (!int.TryParse(inputDays1, out int intDays1) || intDays1 <= 0 || intDays1 > 31) throw new Exception("Error: there's only 31 days in a month");
+                else if (inputDays1 == string.Empty) throw new Exception("Error: the string you entered is empty");
+                DaysOfWeek day1 = (DaysOfWeek)((intDays1 - 1) % 7);
+                Console.WriteLine($"День {inputDays1} - {day1}");
+                Console.Write("день 2: ");
+                string inputDays2 = Console.ReadLine();
+                if (!int.TryParse(inputDays2, out int intDays2) || intDays2 <= 0 || intDays2 > 31) throw new Exception("Error: there's only 31 days in a month");
+                else if (inputDays2 == string.Empty) throw new Exception("Error: the string you entered is empty");
+                DaysOfWeek day2 = (DaysOfWeek)((intDays2 - 1) % 7);
+                Console.WriteLine($"День {inputDays2} - {day2}");
+                Console.WriteLine($"Разница между днями: {Days.ObscureCounting(intDays1, intDays2)}");
 
                 Console.Write("футбик: ");
                 string inputSoccer = Console.ReadLine();
@@ -28,16 +45,6 @@ namespace testapp
                 Console.Clear();
                 Console.WriteLine(ex.Message);
             }
-        }
-        enum DaysOfWeek
-        {
-            понедельник = 1,
-            вторник,
-            среда,
-            четверг,
-            пятница,
-            суббота,
-            воскресенье
         }
     }
     class Soccerman //класс футболера который содержит имя и номер футболера и класс футбол тимы, хранящий 11 плееров в массиве и индексатор
@@ -59,5 +66,9 @@ namespace testapp
             get { return Players[i - 1]; }
             set { Players[i - 1] = value; }
         }
+    }
+    class Days
+    { 
+        public static int ObscureCounting(int i, int j) => (i > j) ? i - j - 1 : j - i - 1;
     }
 }
