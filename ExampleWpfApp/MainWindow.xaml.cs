@@ -24,5 +24,15 @@ namespace ExampleWpfApp
         {
             InitializeComponent();
         }
+
+        private void BtnCenter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEnter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

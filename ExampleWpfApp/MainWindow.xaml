@@ -6,5 +6,8 @@
         xmlns:local="clr-namespace:ExampleWpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <Button x:Name="BtnEnter" Width="50" Height="50" Content="BtnEnter" Click="BtnEnter_Click"></Button>
+        <Button x:Name="BtnCenter" Width="70" Height="50" Margin="582,225,76,144" Content="BtnCenterClick" Click="BtnCenter_Click"></Button>
+    </Grid>
 </Window>
