@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Effect>
+            <DropShadowEffect/>
+        </Grid.Effect>
+        <Button x:Name="RClickButton" Content="Cont" Background="Purple" Foreground="LimeGreen" Cursor="Wait" Click="RClickButton_Click" FontWeight="ExtraBlack" Margin="416,191,176,0" Height="120" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TextBlock" Text="Ja Aboba-President" FlowDirection="LeftToRight" Margin="341,122,324,182" Width="100" Height="100"/>
+        <Button x:Name="RClickButton2" Content="Cont" Width="197" Height="120" Background="Purple" Foreground="LimeGreen" Cursor="Wait" Click="RClickButton_Click" FontWeight="ExtraBlack" Margin="32,35,563,264"/>
+    </Grid>
+</Window>
