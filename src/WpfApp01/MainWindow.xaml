@@ -7,11 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.Effect>
-            <DropShadowEffect/>
-        </Grid.Effect>
-        <Button x:Name="RClickButton" Content="Cont" Background="Purple" Foreground="LimeGreen" Cursor="Wait" Click="RClickButton_Click" FontWeight="ExtraBlack" Margin="416,191,176,0" Height="120" VerticalAlignment="Top"/>
-        <TextBlock x:Name="TextBlock" Text="Ja Aboba-President" FlowDirection="LeftToRight" Margin="341,122,324,182" Width="100" Height="100"/>
-        <Button x:Name="RClickButton2" Content="Cont" Width="197" Height="120" Background="Purple" Foreground="LimeGreen" Cursor="Wait" Click="RClickButton_Click" FontWeight="ExtraBlack" Margin="32,35,563,264"/>
+        <Button x:Name="YellowButton" Width="200" Height="75" Content="1" BorderBrush="Black" Background="#FFFFD303" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Georgia" />
+        <Button x:Name="GreenButton" Width="200" Height="75" Content="2" BorderBrush="Black" Background="#FF31BD00" FontSize="20" HorizontalAlignment="Center" FontFamily="Georgia" />
+        <Button x:Name="PurpleButton" Width="200" Height="75" Content="3" BorderBrush="Black" Background="#FF9718C8" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontFamily="Georgia" />
     </Grid>
 </Window>
