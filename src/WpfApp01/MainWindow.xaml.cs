@@ -26,9 +26,14 @@ namespace WpfApp01
             InitializeComponent();
         }
 
-        private void RClickButton_Click(object sender, RoutedEventArgs e)
+        private void YellowButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("Hello, World!");
+        }
+
+        private void GreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
