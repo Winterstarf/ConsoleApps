@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp02"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel x:Name="LeftStackPanel" Width="120" HorizontalAlignment="Left" Orientation="Vertical" Background="#FFFFA302">
-        <Image x:Name="BearImage" Height="70"/>
-        <Button x:Name="MainButton" Content="Главная" FontSize="16" Background="LightPink" Foreground="White"/>
-        <Button x:Name="HelloButton" Content="Hello" FontSize="16" Background="LightPink" Foreground="White"/>
-        <Button x:Name="NewButton" Content="New" FontSize="16" Background="LightPink" Foreground="White"/>
-        <Button x:Name="SettingsButton" Content="Settings" FontSize="16" Background="LightPink" Foreground="White"/>
-        <Button x:Name="UsersButton" Content="Users" FontSize="16" Background="LightPink" Foreground="White"/>
-
-    </StackPanel>
+        Title="MainWindow" Height="640" Width="926">
+    <Grid>
+        <StackPanel x:Name="LeftStackPanel" Width="120" HorizontalAlignment="Left" Orientation="Vertical" Background="#FFFFA302">
+            <Image x:Name="BearImage" Height="70"/>
+            <Button x:Name="MainButton" Content="Главная" FontSize="16" Background="LightPink" Foreground="White"/>
+            <Button x:Name="HelloButton" Content="Hello" FontSize="16" Background="LightPink" Foreground="White"/>
+            <Button x:Name="NewButton" Content="New" FontSize="16" Background="LightPink" Foreground="White"/>
+            <Button x:Name="SettingsButton" Content="Settings" FontSize="16" Background="LightPink" Foreground="White"/>
+            <Button x:Name="UsersButton" Content="Users" FontSize="16" Background="LightPink" Foreground="White"/>
+        </StackPanel>
+        <StackPanel x:Name="TopStackPanel" Height="72" VerticalAlignment="Top" Orientation="Horizontal" Margin="120,0,0,537" Background="BlueViolet">
+            <Button x:Name="PreviousButton" Content="Назад" FontSize="16" Background="LightPink" Foreground="White" Height="25"/>
+            <Button x:Name="NextButton" Content="Вперёд" FontSize="16" Background="LightPink" Foreground="White" Height="25"/>
+        </StackPanel>
+    </Grid>
 </Window>
