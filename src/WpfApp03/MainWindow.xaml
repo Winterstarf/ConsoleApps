@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="415" Width="319" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <TextBox x:Name="XTextBox" HorizontalAlignment="Left" Margin="104,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="XTextBlock" HorizontalAlignment="Left" Margin="77,134,0,0" TextWrapping="Wrap" Text="X:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="VarTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Вариант 3" VerticalAlignment="Top" Height="44" Width="93"/>
+        <TextBox x:Name="YTextBox" HorizontalAlignment="Left" Margin="104,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="YTextBlock" HorizontalAlignment="Left" Margin="77,175,0,0" TextWrapping="Wrap" Text="Y:" VerticalAlignment="Top"/>
+        <RadioButton x:Name="SinhRadioButton" Content="Sinh(X)" HorizontalAlignment="Left" Margin="44,247,0,0" VerticalAlignment="Top" Checked="SinhRadioButton_Checked" IsChecked="True"/>
+        <RadioButton x:Name="X2RadioButton" Content="X^2" HorizontalAlignment="Left" Margin="44,274,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.245,0.604" Width="48" Checked="X2RadioButton_Checked"/>
+        <RadioButton x:Name="EXRadioButton" Content="e^X" HorizontalAlignment="Left" Margin="44,298,0,0" VerticalAlignment="Top" Checked="EXRadioButton_Checked"/>
+        <Button x:Name="ResButton" Content="GetResult" HorizontalAlignment="Left" Margin="160,247,0,0" VerticalAlignment="Top" Height="71" Width="112" FontSize="16" Click="ResButton_Click"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="77,10,0,0" VerticalAlignment="Top" Width="226" Source="C:\Users\student\Source\Repos\winterstarf\ConsoleApps\src\WpfApp03\Снимок экрана 2023-06-09 121239.png"/>
+    </Grid>
+</Window>
