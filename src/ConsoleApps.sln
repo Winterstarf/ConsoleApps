@@ -46,6 +46,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppPractic3", "Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp05", "WpfApp05\WpfApp05.csproj", "{CC363058-ED7D-4F75-83E4-D532EF276574}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp06", "WpfApp06\WpfApp06.csproj", "{4266444D-D2B7-4B6C-AA31-026661C465BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppPractic4", "ConsoleAppPractic4\ConsoleAppPractic4.csproj", "{BEB8FF84-2BC3-497A-AE8E-7BB938C482DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,6 +132,14 @@ Global
 		{CC363058-ED7D-4F75-83E4-D532EF276574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC363058-ED7D-4F75-83E4-D532EF276574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC363058-ED7D-4F75-83E4-D532EF276574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4266444D-D2B7-4B6C-AA31-026661C465BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4266444D-D2B7-4B6C-AA31-026661C465BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4266444D-D2B7-4B6C-AA31-026661C465BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4266444D-D2B7-4B6C-AA31-026661C465BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB8FF84-2BC3-497A-AE8E-7BB938C482DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB8FF84-2BC3-497A-AE8E-7BB938C482DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB8FF84-2BC3-497A-AE8E-7BB938C482DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB8FF84-2BC3-497A-AE8E-7BB938C482DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

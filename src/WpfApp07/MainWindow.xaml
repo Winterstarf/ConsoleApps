@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApp07.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp07"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="#FFF5D024"/>
+        <Rectangle HorizontalAlignment="Left" Height="225" Margin="635,175,0,0" Stroke="Black" VerticalAlignment="Top" Width="62" Fill="#FF8C4D0D"/>
+        <Rectangle HorizontalAlignment="Left" Height="201" Margin="558,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="216" Fill="#FF43FB34"/>
+        <Rectangle HorizontalAlignment="Left" Height="56" Margin="489,344,0,0" Stroke="Black" VerticalAlignment="Top" Width="24" Fill="#FF213290"/>
+        <Rectangle HorizontalAlignment="Left" Height="55" Margin="489,289,0,0" Stroke="Black" VerticalAlignment="Top" Width="24" Fill="#FF29CCBA"/>
+        <Rectangle HorizontalAlignment="Left" Height="53" Margin="510,296,0,0" Stroke="Black" VerticalAlignment="Top" Width="18" RenderTransformOrigin="0.5,0.5" Fill="#FF29CCBA">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-58.352"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Image HorizontalAlignment="Left" Height="41" Margin="484,256,0,0" VerticalAlignment="Top" Width="34" Source="C:\Users\User\Documents\Visual Studio 2022\Repos\ConsoleApps\src\WpfApp07\image.png"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="525,283,0,0" VerticalAlignment="Top" Width="64" Source="C:\Users\User\Documents\Visual Studio 2022\Repos\ConsoleApps\src\WpfApp07\Iron_Axe_JE5_BE2.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="77.004"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Rectangle HorizontalAlignment="Left" Height="35" Margin="517,309,0,0" VerticalAlignment="Top" Width="18" RenderTransformOrigin="0.5,0.5" Fill="#FF9D6A4F" Stroke="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-58.352"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+</Window>
