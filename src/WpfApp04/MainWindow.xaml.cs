@@ -25,30 +25,27 @@ namespace WpfApp04
 
         private void ResButton_Click(object sender, RoutedEventArgs e)
         {
+            ResTextBox.Text = string.Empty;
+
             x0 = Convert.ToDouble(X0TextBox.Text);
             xk = Convert.ToDouble(XkTextBox.Text);
             dx = Convert.ToDouble(DxTextBox.Text);
             a = Convert.ToDouble(ATextBox.Text);
             b = Convert.ToDouble(BTextBox.Text);
 
+            double x = x0;
 
+            while (x <= (xk + dx / 2))
+            {
+                double y = Math.Pow(10, -1) * a * Math.Pow(x, 3) * Math.Tan(a - b * x);
+                ResTextBox.Text += "x=" + Convert.ToString(x) + "; y=" + Convert.ToString(y) + Environment.NewLine;
+                x += dx;
+            }
         }
 
         public MainWindow()
         {
             InitializeComponent();
-        }
-    }
-    class Methods
-    {
-        public double Evaluate(double x0, double xk, double dx, double a, double b)
-        {
-            double x = x0;
-
-            while (x <= (xk + dx / 2))
-            {
-
-            }
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfLab
+namespace WpfApp05
 {
     /// <summary>
-    /// Логика взаимодействия для App.xaml
+    /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
