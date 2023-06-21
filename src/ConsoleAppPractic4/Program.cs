@@ -10,7 +10,7 @@ namespace ConsoleAppPractic4
     {
         static void Main(string[] args)
         {
-            var f = Console.ReadLine();
+            string f = Console.ReadLine();
             int count = f.Count(char.IsPunctuation);
             Console.WriteLine($"Знаков препинания - {count}");
             Console.ReadKey();
