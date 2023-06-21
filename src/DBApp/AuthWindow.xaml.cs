@@ -19,7 +19,6 @@ namespace DBApp
     /// </summary>
     public partial class AuthWindow : Window
     {
-        string us, ps;
         public AuthWindow()
         {
             InitializeComponent();
@@ -27,10 +26,7 @@ namespace DBApp
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            us = UsernameTextBox.Text;
-            ps = PasswordTextBox.Text;
 
-            
         }
     }
 }

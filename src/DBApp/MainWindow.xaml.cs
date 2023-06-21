@@ -20,11 +20,26 @@ namespace DBApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        RoolEntities db_cont = new RoolEntities();
         public MainWindow()
         {
             InitializeComponent();
-            AuthWindow authWindow = new AuthWindow();
-            authWindow.Owner = this;
+            Dtg_Goods.ItemsSource = db_cont.Goods.ToList();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
