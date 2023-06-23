@@ -16,9 +16,9 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button x:Name="AddButton" Content="Add" Width="150" Height="45" MaxHeight="45" MaxWidth="150" FontSize="16" Margin="10,0,0,10" Click="AddButton_Click"/>
-            <Button x:Name="DeleteButton" Content="Delete" Width="150" Height="45" MaxHeight="45" MaxWidth="150" FontSize="16" Margin="10,0,0,10" Click="DeleteButton_Click"/>
-            <Button x:Name="ExitButton" Content="Exit" Width="150" Height="45" MaxHeight="45" MaxWidth="150" FontSize="16" Margin="10,0,0,10" Click="ExitButton_Click"/>
+            <Button x:Name="AddButton" Content="Add" Width="100" Height="45" MaxHeight="45" MaxWidth="100" FontSize="16" Margin="10,0,0,10" Click="AddButton_Click"/>
+            <Button x:Name="DeleteButton" Content="Delete" Width="100" Height="45" MaxHeight="45" MaxWidth="100" FontSize="16" Margin="10,0,0,10" Click="DeleteButton_Click"/>
+            <Button x:Name="ExitButton" Content="Exit" Width="80" Height="45" MaxHeight="45" MaxWidth="80" FontSize="16" Margin="10,0,0,10" Click="ExitButton_Click"/>
         </StackPanel>
         <TextBlock Text="Search:" FontSize="14" Margin="10,10,10,10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="SearchTextBox" TextWrapping="NoWrap" Margin="65,10,50,20" FontSize="14" Grid.Row="0"/>
