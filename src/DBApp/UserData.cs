@@ -17,7 +17,6 @@ namespace DBApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserData()
         {
-            this.Orders = new HashSet<Orders>();
             this.UserList = new HashSet<UserList>();
         }
     
@@ -25,8 +24,6 @@ namespace DBApp
         public string Username { get; set; }
         public string Pass { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserList> UserList { get; set; }
     }

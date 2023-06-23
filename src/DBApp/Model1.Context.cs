@@ -33,7 +33,6 @@ namespace DBApp
         public virtual DbSet<OrderStatus> OrderStatus { get; set; }
         public virtual DbSet<PickUpPoint> PickUpPoint { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<UserData> UserData { get; set; }
         public virtual DbSet<UserList> UserList { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }

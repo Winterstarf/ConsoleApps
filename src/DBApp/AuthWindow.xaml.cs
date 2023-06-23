@@ -29,7 +29,7 @@ namespace DBApp
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string username = UsernameTextBox.Text;
-            string password = PasswordTextBox.Text;
+            string password = PasswordPasswordBox.Password;
 
             SqlConnection con = new SqlConnection(@"Data Source=201-04\SQLEXPRESS;Initial Catalog=Rool;Integrated Security=SSPI");
             con.Open();
@@ -55,6 +55,8 @@ namespace DBApp
             {
                 MessageBox.Show("Несуществующий аккаунт");
             }
+
+            con.Close();
         }
     }
 }

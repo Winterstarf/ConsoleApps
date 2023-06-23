@@ -15,10 +15,14 @@
             <RowDefinition Height="323*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left">
             <Button x:Name="AddButton" Content="Add" Width="100" Height="45" MaxHeight="45" MaxWidth="100" FontSize="16" Margin="10,0,0,10" Click="AddButton_Click"/>
             <Button x:Name="DeleteButton" Content="Delete" Width="100" Height="45" MaxHeight="45" MaxWidth="100" FontSize="16" Margin="10,0,0,10" Click="DeleteButton_Click"/>
             <Button x:Name="ExitButton" Content="Exit" Width="80" Height="45" MaxHeight="45" MaxWidth="80" FontSize="16" Margin="10,0,0,10" Click="ExitButton_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="OrdersButton" Content="Orders" Width="80" Height="45" MaxHeight="45" MaxWidth="80" FontSize="16" Margin="10,0,0,10" Click="OrdersButton_Click"/>
+            <Button x:Name="SuppliersButton" Content="Suppliers" Width="80" Height="45" MaxHeight="45" MaxWidth="80" FontSize="16" Margin="10,0,10,10" Click="SuppliersButton_Click"/>
         </StackPanel>
         <TextBlock Text="Search:" FontSize="14" Margin="10,10,10,10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBox x:Name="SearchTextBox" TextWrapping="NoWrap" Margin="65,10,50,20" FontSize="14" Grid.Row="0"/>
@@ -26,11 +30,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Article" Binding="{Binding Article}"></DataGridTextColumn>
                 <DataGridTextColumn Header="ItemName" Binding="{Binding ItemName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="idMeasureUnit" Binding="{Binding idMeasureUnit}"></DataGridTextColumn>
+                <DataGridTextColumn Header="MeasureUnit" Binding="{Binding MeasureUnit.MeasureUnitName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}"></DataGridTextColumn>
-                <DataGridTextColumn Header="idManufacturer" Binding="{Binding idManufacturer}"></DataGridTextColumn>
-                <DataGridTextColumn Header="idSupplier" Binding="{Binding idSupplier}"></DataGridTextColumn>
-                <DataGridTextColumn Header="idCategory" Binding="{Binding idCategory}"></DataGridTextColumn>
+                <DataGridTextColumn Header="idManufacturer" Binding="{Binding Manufacturer.ManufacturerName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="idSupplier" Binding="{Binding Supplier.SupplierName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category.CategoryName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Sale" Binding="{Binding Sale}"></DataGridTextColumn>
                 <DataGridTextColumn Header="ItemCount" Binding="{Binding ItemCount}"></DataGridTextColumn>
                 <DataGridTextColumn Header="ItemPic" Binding="{Binding ItemPic}"></DataGridTextColumn>

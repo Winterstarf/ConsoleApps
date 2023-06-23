@@ -24,7 +24,7 @@ namespace DBApp
         public System.DateTime OrderDate { get; set; }
         public System.DateTime DeliveryDate { get; set; }
         public int idPickUpPoint { get; set; }
-        public int idUserData { get; set; }
+        public int idUser { get; set; }
         public int Code { get; set; }
         public int idStatus { get; set; }
     
@@ -32,6 +32,6 @@ namespace DBApp
         public virtual ICollection<Order_Goods> Order_Goods { get; set; }
         public virtual PickUpPoint PickUpPoint { get; set; }
         public virtual OrderStatus OrderStatus { get; set; }
-        public virtual UserData UserData { get; set; }
+        public virtual UserList UserList { get; set; }
     }
 }

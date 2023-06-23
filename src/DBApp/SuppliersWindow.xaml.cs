@@ -10,21 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DBApp
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SuppliersWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SuppliersWindow : Window
     {
         RoolEntities1 db_cont = new RoolEntities1();
-        public MainWindow()
+        public SuppliersWindow()
         {
             InitializeComponent();
-            Dtg_Goods.ItemsSource = db_cont.Goods.ToList();
+            Dtg_Suppliers.ItemsSource = db_cont.Supplier.ToList();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -39,19 +38,7 @@ namespace DBApp
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
-        }
-
-        private void OrdersButton_Click(object sender, RoutedEventArgs e)
-        {
-            OrdersWindow ordersWindow = new OrdersWindow();
-            ordersWindow.Show();
-        }
-
-        private void SuppliersButton_Click(object sender, RoutedEventArgs e)
-        {
-            SuppliersWindow suppliersWindow = new SuppliersWindow();
-            suppliersWindow.Show();
+            this.Close();
         }
     }
 }
