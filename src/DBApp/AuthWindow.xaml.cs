@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,33 @@ namespace DBApp
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            string username = UsernameTextBox.Text;
+            string password = PasswordTextBox.Text;
 
+            SqlConnection con = new SqlConnection(@"Data Source=201-04\SQLEXPRESS;Initial Catalog=Rool;Integrated Security=SSPI");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("Select * from UserData where Username='" + username + "' and Pass='" + password + "'", con);
+            cmd.CommandType = System.Data.CommandType.Text;
+
+            object result = cmd.ExecuteScalar();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cmd;
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+
+            if (dataSet.Tables[0].Rows.Count > 0)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Несуществующий аккаунт");
+            }
         }
     }
 }
