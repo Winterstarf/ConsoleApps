@@ -34,7 +34,24 @@ namespace DBApp
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            var row = Dtg_Goods.SelectedItem as Goods;
 
+            if (row == null)
+            {
+                MessageBox.Show("Не выбрана строка для удаления");
+                return;
+            }
+
+            MessageBoxResult res = MessageBox.Show("Подтвердите удаление", "Удаление строки", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+
+            if (res == MessageBoxResult.Yes)
+            {
+                db_cont.Goods.Remove(row);
+                db_cont.SaveChanges();
+
+                MessageBox.Show("Строка удалена");
+                Dtg_Goods.ItemsSource = db_cont.Goods.ToList();
+            }
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
