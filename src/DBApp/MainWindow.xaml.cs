@@ -53,5 +53,15 @@ namespace DBApp
             SuppliersWindow suppliersWindow = new SuppliersWindow();
             suppliersWindow.Show();
         }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Dtg_Goods.ItemsSource = db_cont.Goods.Where(k => k.ItemName.ToString().Contains(SearchTextBox.Text) || k.Category.ToString().Contains(SearchTextBox.Text) || k.Manufacturer.ToString().Contains(SearchTextBox.Text) || k.Supplier.ToString().Contains(SearchTextBox.Text)).ToList();
+            
+            if (SearchTextBox.Text == "")
+            {
+                Dtg_Goods.ItemsSource = db_cont.Goods.ToList();
+            }
+        }
     }
 }
