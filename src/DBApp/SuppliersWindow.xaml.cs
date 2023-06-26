@@ -28,7 +28,7 @@ namespace DBApp
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

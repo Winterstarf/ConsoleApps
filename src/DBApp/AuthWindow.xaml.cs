@@ -51,9 +51,24 @@ namespace DBApp
                 this.Close();
             }
 
+            else if ((username == "" || username == null) && (password == "" || password == null))
+            {
+                MessageBox.Show("Логин и пароль не введены");
+            }
+
+            else if (username == "" || username == null)
+            {
+                MessageBox.Show("Логин не введён");
+            }
+
+            else if (password == "" || password == null)
+            {
+                MessageBox.Show("Пароль не введён");
+            }
+
             else
             {
-                MessageBox.Show("Несуществующий аккаунт");
+                MessageBox.Show("Аккаунт не найден");
             }
 
             con.Close();
