@@ -32,8 +32,8 @@
                 <DataGridTextColumn Header="ItemName" Binding="{Binding ItemName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="MeasureUnit" Binding="{Binding MeasureUnit.MeasureUnitName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}"></DataGridTextColumn>
-                <DataGridTextColumn Header="idManufacturer" Binding="{Binding Manufacturer.ManufacturerName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="idSupplier" Binding="{Binding Supplier.SupplierName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Manufacturer" Binding="{Binding Manufacturer.ManufacturerName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.SupplierName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Category" Binding="{Binding Category.CategoryName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Sale" Binding="{Binding Sale}"></DataGridTextColumn>
                 <DataGridTextColumn Header="ItemCount" Binding="{Binding ItemCount}"></DataGridTextColumn>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +74,7 @@ namespace DBApp
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Dtg_Goods.ItemsSource = db_cont.Goods.Where(k => k.ItemName.ToString().Contains(SearchTextBox.Text) || k.Category.ToString().Contains(SearchTextBox.Text) || k.Manufacturer.ToString().Contains(SearchTextBox.Text) || k.Supplier.ToString().Contains(SearchTextBox.Text)).ToList();
+            Dtg_Goods.ItemsSource = db_cont.Goods.Where(k => k.ItemName.ToString().Contains(SearchTextBox.Text) || k.Category.CategoryName.ToString().Contains(SearchTextBox.Text) || k.Manufacturer.ManufacturerName.ToString().Contains(SearchTextBox.Text) || k.Supplier.SupplierName.ToString().Contains(SearchTextBox.Text)).ToList();
             
             if (SearchTextBox.Text == "")
             {

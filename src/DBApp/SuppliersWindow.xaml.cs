@@ -57,5 +57,15 @@ namespace DBApp
         {
             this.Close();
         }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Dtg_Suppliers.ItemsSource = db_cont.Supplier.Where(k => k.id.ToString().Contains(SearchTextBox.Text) || k.SupplierName.ToString().Contains(SearchTextBox.Text)).ToList();
+
+            if (SearchTextBox.Text == "")
+            {
+                Dtg_Suppliers.ItemsSource = db_cont.Supplier.ToList();
+            }
+        }
     }
 }

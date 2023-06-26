@@ -21,7 +21,7 @@
             <Button x:Name="ExitButton" Content="Exit" Width="80" Height="45" MaxHeight="45" MaxWidth="80" FontSize="16" Margin="10,0,0,10" Click="ExitButton_Click"/>
         </StackPanel>
         <TextBlock Text="Search:" FontSize="14" Margin="10,10,10,10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBox x:Name="SearchTextBox" TextWrapping="NoWrap" Margin="65,10,50,20" FontSize="14" Grid.Row="0"/>
+        <TextBox x:Name="SearchTextBox" TextWrapping="NoWrap" Margin="65,10,50,20" FontSize="14" Grid.Row="0" TextChanged="SearchTextBox_TextChanged"/>
         <DataGrid x:Name="Dtg_Orders" Margin="10,10,10,10" Grid.Row="1" ColumnWidth="*" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="OrderId" Binding="{Binding id}"></DataGridTextColumn>

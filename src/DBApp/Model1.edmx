@@ -165,7 +165,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_idOrder">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order_Goods" Type="Self.Order_Goods" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -509,7 +511,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_idOrder">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order_Goods" Type="Self.Order_Goods" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
