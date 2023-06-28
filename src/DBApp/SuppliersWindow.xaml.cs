@@ -19,16 +19,11 @@ namespace DBApp
     /// </summary>
     public partial class SuppliersWindow : Window
     {
-        RoolEntities1 db_cont = new RoolEntities1();
+        RoolEntities2 db_cont = new RoolEntities2();
         public SuppliersWindow()
         {
             InitializeComponent();
             Dtg_Suppliers.ItemsSource = db_cont.Supplier.ToList();
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

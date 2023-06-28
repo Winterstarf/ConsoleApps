@@ -19,16 +19,11 @@ namespace DBApp
     /// </summary>
     public partial class OrdersWindow : Window
     {
-        RoolEntities1 db_cont = new RoolEntities1();
+        RoolEntities2 db_cont = new RoolEntities2();
         public OrdersWindow()
         {
             InitializeComponent();
             Dtg_Orders.ItemsSource = db_cont.Orders.ToList();
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

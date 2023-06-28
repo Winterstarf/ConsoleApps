@@ -22,7 +22,7 @@ namespace DBApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        RoolEntities1 db_cont = new RoolEntities1();
+        RoolEntities2 db_cont = new RoolEntities2();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +31,13 @@ namespace DBApp
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            var add = new Goods();
+            db_cont.Goods.Add(add);
 
+            var win = new AddWindow(db_cont, add);
+            win.ShowDialog();
+
+            Dtg_Goods.ItemsSource = db_cont.Goods.ToList();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
