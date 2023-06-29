@@ -31,7 +31,7 @@ namespace DBApp
             string username = UsernameTextBox.Text;
             string password = PasswordPasswordBox.Password;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-QLMK9N;Initial Catalog=Rool;Integrated Security=SSPI");
+            SqlConnection con = new SqlConnection(@"Data Source=201-04\SQLEXPRESS;Initial Catalog=Rool;Integrated Security=SSPI");
             con.Open();
 
             SqlCommand cmd = new SqlCommand("Select * from UserData where Username='" + username + "' and Pass='" + password + "'", con);

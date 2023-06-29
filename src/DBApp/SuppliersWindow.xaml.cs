@@ -19,7 +19,7 @@ namespace DBApp
     /// </summary>
     public partial class SuppliersWindow : Window
     {
-        RoolEntities2 db_cont = new RoolEntities2();
+        RoolEntities1 db_cont = new RoolEntities1();
         public SuppliersWindow()
         {
             InitializeComponent();

@@ -19,8 +19,8 @@ namespace DBApp
     /// </summary>
     public partial class AddWindow : Window
     {
-        RoolEntities2 db_cont = new RoolEntities2();
-        public AddWindow(RoolEntities2 cont, Goods g)
+        RoolEntities1 db_cont = new RoolEntities1();
+        public AddWindow(RoolEntities1 cont, Goods g)
         {
             InitializeComponent();
 
@@ -35,8 +35,16 @@ namespace DBApp
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            db_cont.SaveChanges();
-            this.Close();
+            if (ItemNameTB.Text == "" || MeasureUnitCB.SelectedItem == null || PriceTB.Text == "" || ManufacturerCB.SelectedItem == null || SupplierCB.SelectedItem == null || CategoryCB.SelectedItem == null || SaleTB.Text == "" || ItemCountTB.Text == "") //article, itempic - nullable
+            {
+                MessageBox.Show("Только Article и ItemPic могут не иметь значений");
+            }
+
+            else
+            {
+                db_cont.SaveChanges();
+                this.Close();
+            }
         }
     }
 }

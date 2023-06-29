@@ -22,7 +22,7 @@ namespace DBApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        RoolEntities2 db_cont = new RoolEntities2();
+        RoolEntities1 db_cont = new RoolEntities1();
         public MainWindow()
         {
             InitializeComponent();
