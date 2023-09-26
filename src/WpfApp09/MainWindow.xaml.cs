@@ -27,7 +27,7 @@ namespace WpfApp09
 
         private void resBtn_Click(object sender, RoutedEventArgs e)
         {
-            resTbx.Text = String.Empty;
+            resTbx.Text = string.Empty;
             
             int f;
             string fStr;
