@@ -17,6 +17,6 @@
             <Button x:Name="resbtn" Content="Result" Height="25" Width="90" Margin="0,25,0,0" Click="resbtn_Click"></Button>
         </StackPanel>
         <Image Source="image.png" Margin="175,32,32,181"/>
-        <TextBox x:Name="restbx" Text="Result:" Margin="175,233,10,10"></TextBox>
+        <TextBox x:Name="restbx" Margin="175,233,10,10"></TextBox>
     </Grid>
 </Window>

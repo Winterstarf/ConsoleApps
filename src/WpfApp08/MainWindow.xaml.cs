@@ -27,7 +27,7 @@ namespace WpfApp08
 
         private void resbtn_Click(object sender, RoutedEventArgs e)
         {
-            restbx.Text = "Result:";
+            restbx.Text = String.Empty;
 
             if (xtbx.Text == string.Empty || ytbx.Text == string.Empty || ztbx.Text == string.Empty) MessageBox.Show("One of fields is empty");
             else if (!double.TryParse(xtbx.Text, out double x) || !double.TryParse(ytbx.Text, out double y) || !double.TryParse(ztbx.Text, out double z)) MessageBox.Show("One of fields has incorrect num");
@@ -39,7 +39,7 @@ namespace WpfApp08
 
                 double v = (1 + Math.Pow(Math.Sin(x + y), 2)) / (Math.Abs(x - ((2 * y) / (1 + Math.Pow(x, 2) * Math.Pow(y, 2))))) * Math.Pow(x, Math.Abs(y)) + Math.Pow(Math.Cos(Math.Atan(1 / z)), 2);
 
-                restbx.Text += "\n" + Convert.ToString(v);
+                restbx.Text += $"При:\nx={x}\ny={y}\nz={z}\n\nРезультат:\nv={Convert.ToString(v)}";
             }    
         }
     }
