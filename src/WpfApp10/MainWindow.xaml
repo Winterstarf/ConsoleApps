@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:WpfApp10"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600" ResizeMode="CanMinimize">
-    <Grid>
-        <Label x:Name="lbl_1" Height="150" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" MouseUp="Label_Click">
+    <Grid x:Name="maingrid" MouseLeftButtonUp="Grid_MouseLeftButtonUp">
+        <Label x:Name="lbl_1" Height="150" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1" MouseLeftButtonUp="Label_Click">
             <Label.Content>
-                >
+                <Grid x:Name="Panel1" Height="130" Width="230" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Label.Content>
         </Label>
     </Grid>

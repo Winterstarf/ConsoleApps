@@ -29,19 +29,40 @@ namespace WpfApp10
         {
             if (sender is Label label)
             {
-                if (label.Content is Panel panel)
+                if (label.Content is Grid panel)
                 {
                     panel.Children.Clear();
-                    panel.Children.Add(new Button { Content = "button1", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, Width = 30, Height = 10 });
-                    panel.Children.Add(new Button { Content = "button2", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Bottom, Width = 30, Height = 10 });
-                    panel.Children.Add(new Button { Content = "button3", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Top, Width = 30, Height = 10 });
-                    panel.Children.Add(new Button { Content = "button1", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Bottom, Width = 30, Height = 10 });
-                    /*if (e.OriginalSource is MouseButtonEventArgs args && args.ChangedButton == MouseButton.Left)
-                    {
-                        
-                    }*/
+                    panel.Children.Add(new Button { Content = "button1", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, MinWidth = 20, MinHeight = 15 });
+                    panel.Children.Add(new Button { Content = "button2", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Bottom, MinWidth = 20, MinHeight = 15 });
+                    panel.Children.Add(new Button { Content = "button3", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Top, MinWidth = 20, MinHeight = 15 });
+                    panel.Children.Add(new Button { Content = "button4", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Bottom, MinWidth = 20, MinHeight = 15 });
                 }
+            }
+        }
+
+        private void Grid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            DependencyObject source = (DependencyObject)e.OriginalSource;
+            if (sender is Grid grid && !isChildOfPanel(source, lbl_1))
+            {
+                MessageBox.Show("aboba");
+                /*if (window.Content is Grid grid && !isChildOfPanel(source, lbl_1))
+                {
+                    grid.Children.Clear();
+                    grid.Children.Add(new TextBox { Text = "textbox1", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Top, MinWidth = 20, MinHeight = 15 });
+                    grid.Children.Add(new TextBox { Text = "textbox2", HorizontalAlignment = HorizontalAlignment.Left, VerticalAlignment = VerticalAlignment.Bottom, MinWidth = 20, MinHeight = 15 });
+                    grid.Children.Add(new TextBox { Text = "textbox3", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Top, MinWidth = 20, MinHeight = 15 });
+                    grid.Children.Add(new TextBox { Text = "textbox4", HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Bottom, MinWidth = 20, MinHeight = 15 });
+                }*/
             }    
+        }
+
+        private bool isChildOfPanel(DependencyObject child, DependencyObject panel)
+        {
+            var parent = VisualTreeHelper.GetParent(child);
+
+            if (parent == panel) return true;
+            else if (parent ==)
         }
     }
 }
