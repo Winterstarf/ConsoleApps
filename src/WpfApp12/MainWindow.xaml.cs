@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp12.classes;
 
 namespace WpfApp12
 {
@@ -27,18 +29,9 @@ namespace WpfApp12
 
         private void btn_calc_Click(object sender, RoutedEventArgs e)
         {
-            int ind = lb_src.SelectedIndex, count = 0;
-            string str = Convert.ToString(lb_src.Items[ind]);
-
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?' || str[i] == '(' || str[i] == ')' || str[i] == ':' || str[i] == ';' || str[i] == '-')
-                {
-                    count++;
-                }
-            }
-
-            lbl_res.Content = $"Знаков препинания: {count}";
+            string str = (lb_src.SelectedItem as ListBoxItem).ToString();
+            Methods m = new Methods();
+            lbl_res.Content = $"Знаков препинания: {m.numOfUnicodeP(str)}";
         }
     }
 }

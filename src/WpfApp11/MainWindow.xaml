@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp11"
         mc:Ignorable="d"
-        Title="MainWindow" Height="490" Width="320" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="520" Width="320" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="140" Margin="5,5,0,5">
             <TextBlock Text="Исходный массив:"/>
@@ -17,5 +17,7 @@
             <ListBox x:Name="lb_edit" Margin="0,5,0,0" MinHeight="360" MaxHeight="360"/>
             <Button x:Name="btn_replace" Content="Заменить" Margin="5,13,5,5" MinHeight="25" Click="btn_replace_Click"/>
         </StackPanel>
+        <TextBlock Text="Кол-во элементов (дефолт 18):" Height="25" Width="180" Margin="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" x:FieldModifier="public"/>
+        <TextBox x:Name="tbNum"  Height="25" Width="80" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,16 +26,18 @@ namespace WpfApp11
             InitializeComponent();
         }
 
-        int[] arr = new int[18];
-        double[] arrEdited = new double[18];
+        List<int> arr = new List<int>(18);
+        List<double> arrEdited = new List<double>(18);
 
         private void btn_fill_Click(object sender, RoutedEventArgs e)
         {
             lb_orig.Items.Clear();
-
             Random rnd = new Random();
-
-            for (int i = 0; i < arr.Length; i++)
+            if (Convert.ToInt32(tbNum.Text) != 18)
+            {
+                arr.Capacity = Convert.ToInt
+            }
+            for (int i = 0; i < arr.Capacity; i++)
             {
                 arr[i] = rnd.Next(-50, 50);
                 lb_orig.Items.Add($"Arr[{i + 1}] = {arr[i]}");
@@ -45,7 +48,7 @@ namespace WpfApp11
         {
             lb_edit.Items.Clear();
 
-            for (int i = 0; i < arrEdited.Length; i++)
+            for (int i = 0; i < arrEdited.Capacity; i++)
             {
                 arrEdited[i] = (0.13 * Math.Pow(arr[i], 3)) - (2.5 * arr[i]) + 8;
                 lb_edit.Items.Add($"Arr[{i + 1}] = {arrEdited[i]}");
@@ -53,7 +56,7 @@ namespace WpfApp11
 
             lb_edit.Items.Add("\nОтрицательные (если есть):\n");
 
-            for (int i = 0; i < arrEdited.Length; i++)
+            for (int i = 0; i < arrEdited.Capacity; i++)
             {
                 if (arrEdited[i] < 0)
                 {

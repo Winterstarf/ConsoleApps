@@ -8,11 +8,11 @@
         Title="MainWindow" Height="490" Width="320" ResizeMode="CanMinimize">
     <Grid>
         <ListBox x:Name="lb_src" Margin="15,15,15,70" HorizontalAlignment="Center" VerticalAlignment="Stretch" MaxHeight="400">
-            <ListBoxItem Content="М. Павлович пошёл в магазин за фруктами."/>
-            <ListBoxItem Content="Два печенья лежали в банке на полке, Иван взял одно из них, промаркированное как 'Юбилейное'."/>
-            <ListBoxItem Content="Антон воскликнул - 'Что-же это делается такое, почему стоит '2'?'."/>
-            <ListBoxItem Content="Лиса, сверкнув своими клыками, быстро накинулась на ничего не подозревающего зайца."/>
-            <ListBoxItem Content="Стая волков, кружившая поодаль хаты решила, что награда в виде лишь одной тушки не стоит рисков."/>
+            <ListBoxItem x:Name="fffsdf" Content="М. Павлович пошёл в магазин за фруктами."/>
+            <ListBoxItem x:Name="tett" Content="Два печенья лежали в банке на полке, Иван взял одно из них, промаркированное как 'Юбилейное'."/>
+            <ListBoxItem x:Name="dldgldgl" Content="Антон воскликнул - 'Что-же это делается такое, почему стоит '2'?'."/>
+            <ListBoxItem x:Name="fkdfkdfkd" Content="Лиса, сверкнув своими клыками, быстро накинулась на ничего не подозревающего зайца."/>
+            <ListBoxItem x:Name="fkdfkdfkdfkd" Content="Стая волков, кружившая поодаль хаты решила, что награда в виде лишь одной тушки не стоит рисков."/>
         </ListBox>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
             <Button x:Name="btn_calc" Content="Пуск" Margin="15,0,15,25" Height="26" Width="85" Click="btn_calc_Click"/>
