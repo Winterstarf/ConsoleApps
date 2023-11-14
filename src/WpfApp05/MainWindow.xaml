@@ -5,15 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp05"
         mc:Ignorable="d"
-        Title="MainWindow" Height="701" Width="1002" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="600" Width="800" ResizeMode="CanMinimize">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="67*"/>
-            <ColumnDefinition Width="13*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock x:Name="OrigM" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="471" Width="491"><Run Language="ru-ru" Text="Ориг. матрица:"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="TransM" HorizontalAlignment="Left" Margin="487,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="471" Width="505" Grid.ColumnSpan="2"><Run Language="ru-ru" Text="Изм. матрица:"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="Sum" HorizontalAlignment="Left" Margin="425,486,0,0" TextWrapping="Wrap" Text="Сумма S: " VerticalAlignment="Top" Height="30" Width="152"/>
-        <Button x:Name="Butt" Content="Рандомизировать" HorizontalAlignment="Left" Margin="409,521,0,0" VerticalAlignment="Top" Height="64" Width="184" Click="Butt_Click"/>
+        <DataGrid x:Name="dgOrig" Height="390" Width="380" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" CanUserSortColumns="False"/>
+        <DataGrid x:Name="dgEdit" Height="390" Width="380" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" CanUserSortColumns="False"/>
+        <TextBox x:Name="tbNum" Text="10" Height="30" Width="80" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,15"></TextBox>
+        <TextBlock x:Name="Sum" HorizontalAlignment="Center" Margin="0,0,0,110" TextWrapping="Wrap" Text="Сумма S: " VerticalAlignment="Bottom" Height="30" Width="152"/>
+        <Button x:Name="Butt" Content="Рандомизировать" HorizontalAlignment="Center" Margin="0,00,0,50" VerticalAlignment="Bottom" Height="54" Width="162" Click="Butt_Click"/>
     </Grid>
 </Window>

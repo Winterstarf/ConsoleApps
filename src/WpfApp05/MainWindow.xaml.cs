@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,32 +31,20 @@ namespace WpfApp05
         {
             Methods m = new Methods();
 
-            OrigM.Text = "Ориг. матрица:" + Environment.NewLine;
-            TransM.Text = "Изм. матрица:" + Environment.NewLine;
-            Sum.Text = "Сумма S: ";
-
-            double[,] matrix = m.Input();
-            double sum = m.Sum(matrix);
-            double[,] tmatrix = m.Transform(matrix, sum);
-
-            Sum.Text += sum.ToString();
-
-            for (int i = 0; i < 10; i++)
+            if (!int.TryParse(tbNum.Text, out int n) || n <= 0 || tbNum.Text == String.Empty)
             {
-                for (int j = 0; j < 10; j++)
-                {
-                    OrigM.Text += $"{matrix[i, j]}\t";
-                }
-                OrigM.Text += Environment.NewLine;
+                MessageBox.Show("Cant be not an positive int");
+                tbNum.Text = "10";
             }
-
-            for (int i = 0; i < 10; i++)
+            else
             {
-                for (int j = 0; j < 10; j++)
-                {
-                    TransM.Text += $"{tmatrix[i, j]}\t";
-                }
-                TransM.Text += Environment.NewLine;
+                n = int.Parse(tbNum.Text);
+                double[,] mx = m.Fill(n);
+                double[,] tmx = m.Transform(mx, m.Sum(mx));
+
+                Sum.Text = $"Сумма S: {m.Sum(mx)}";
+                dgOrig.ItemsSource = m.dtFill(mx).DefaultView;
+                dgEdit.ItemsSource = m.dtFill(tmx).DefaultView;
             }
         }
     }

@@ -1,65 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace WpfApp05.classes
 {
     internal class Methods
     {
-        public double[,] Input()
+        public double[,] Fill(int n)
         {
-            Random rnd = new Random();
-            double[,] matrix = new double[10, 10];
-            for (int i = 0; i < 10; i++)
+            Random r = new Random();
+            double[,] m = new double[n, n];
+            for (int i = 0; i < m.GetLength(0); i++)
             {
-                for (int j = 0; j < 10; j++)
-                {
-                    matrix[i, j] = rnd.Next(-10, 10);
-                }
+                for (int j = 0; j < m.GetLength(1); j++) m[i, j] = r.Next(-10, 10);
             }
-            return matrix;
+            return m;
         }
-        public double Sum(double[,] matrix)
+
+        public double[,] Transform(double[,] m, double s)
         {
-            double sum = 0;
-            for (int i = 0; i < 10; i++)
+            double[,] t = new double[m.GetLength(0), m.GetLength(1)];
+            for (int i = 0; i < t.GetLength(0); i++)
             {
-                for (int j = 0; i < 10; i++)
+                for (int j = 0; j < t.GetLength(1); j++)
                 {
-                    if (i == j)
-                    {
-                        sum += matrix[i, j];
-                    }
+                    if (s > 10) t[i, j] = m[i, j] + 13.5;
+                    else t[i, j] = Math.Pow(m[i, j], 2) - 1.5;
                 }
             }
-            return sum;
+            return t;
         }
-        public double[,] Transform(double[,] matrix, double sum)
+
+        public double Sum(double[,] m)
         {
-            double[,] tmatrix = new double[10, 10];
-            if (sum > 10)
+            double s = 0;
+            for (int i = 0; i < m.GetLength(0); i++)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    for (int j = 0; j < 10; j++)
-                    {
-                        tmatrix[i, j] = matrix[i, j] + 13.5;
-                    }
-                }
+                if (m[i, i] == m[i, i]) { s += m[i, i]; } 
             }
-            else if (sum <= 10)
+            return s;
+        }
+
+        public DataTable dtFill(double[,] m)
+        {
+            DataTable dt = new DataTable();
+            int r = m.GetLength(0);
+            int c = m.GetLength(1);
+            for (int i = 0; i < c; i++) dt.Columns.Add($"Cln {i + 1}");
+            for (int i = 0; i < r; i++)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    for (int j = 0; j < 10; j++)
-                    {
-                        tmatrix[i, j] = Math.Pow(matrix[i, j], 2) - 1.5;
-                    }
-                }
+                DataRow dr = dt.NewRow();
+                for (int j = 0; j < c; j++) dr[j] = m[i, j];
+                dt.Rows.Add(dr);
             }
-            return tmatrix;
+            return dt;
         }
     }
 }

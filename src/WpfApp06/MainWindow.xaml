@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp06"
         mc:Ignorable="d"
-        Title="MainWindow" Height="332" Width="437" ResizeMode="CanMinimize">
+        Title="MainWindow" Height="296" Width="368" ResizeMode="CanMinimize">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Строка:" VerticalAlignment="Top"/>
-        <TextBox x:Name="getbox" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396" Height="150"/>
-        <Button x:Name="getres" Content="Посчитать символы" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Height="52" Width="132" Click="getres_Click"/>
+        <TextBox x:Name="getbox" HorizontalAlignment="Left" Margin="16,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Height="150"/>
+        <Button x:Name="getres" Content="Start" HorizontalAlignment="Left" Margin="117,197,0,0" VerticalAlignment="Top" Height="33" Width="124" Click="getres_Click"/>
     </Grid>
 </Window>

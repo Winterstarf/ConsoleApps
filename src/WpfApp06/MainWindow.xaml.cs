@@ -28,7 +28,6 @@ namespace WpfApp06
         private void getres_Click(object sender, RoutedEventArgs e)
         {
             var f = getbox.Text;
-            getbox.Text = string.Empty;
             int count = f.Count(char.IsPunctuation);
             MessageBox.Show($"Знаков препинания - {count}");
         }
