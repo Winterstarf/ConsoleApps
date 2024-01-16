@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp14"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        Title="Canvas" Height="450" Width="530" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Height="22" VerticalAlignment="Center" Orientation="Horizontal" Margin="12,7,0,0" Grid.Row="3">
+            <TextBlock Width="50" Height="20" Text="Точка a" Margin="20,0,50,0"/>
+            <TextBlock Width="50" Height="20" Text="Точка b" Margin="0,0,50,0"/>
+            <TextBlock Width="50" Height="20" Text="Точка c" Margin="0,0,50,0"/>
+            <TextBlock Width="50" Height="20" Text="Точка d" Margin="0,0,50,0"/>
+        </StackPanel>
+        <StackPanel Height="24" VerticalAlignment="Top" Orientation="Horizontal" Margin="12,67,120,0" Grid.Row="3">
+            <TextBox x:Name="ax_tb" Width="25" Height="20" Margin="10,0,50,0">
+                <TextBox.Text>
+                    <Binding Path="NumberRange.ValidationResult" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:NumberRange MinValue="-250" MaxValue="250"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox x:Name="ay_tb" Width="25" Height="20" Margin="-50,0,0,0"/>
+            <TextBox x:Name="bx_tb" Width="25" Height="20" Margin="23,0,50,0"/>
+            <TextBox x:Name="by_tb" Width="25" Height="20" Margin="-36,0,50,0"/>
+            <TextBox x:Name="cx_tb" Width="25" Height="20" Margin="-13,0,50,0"/>
+            <TextBox x:Name="cy_tb" Width="25" Height="20" Margin="-36,0,50,0"/>
+            <TextBox x:Name="dx_tb" Width="25" Height="20" Margin="-13,0,50,0"/>
+            <TextBox x:Name="dy_tb" Width="25" Height="20" Margin="-36,0,50,0"/>
+        </StackPanel>
+        <Border x:Name="main_brd" Grid.Row="0" Width="500" Height="300" Background="Azure" BorderBrush="Black" BorderThickness="1">
+            <Canvas x:Name="main_cvs" HorizontalAlignment="Center" VerticalAlignment="Center" Width="0" Height="0" MouseDown="main_cvs_MouseDown" Background="Azure" RenderTransform="1 0 0 -1 0 0"/>
+        </Border>
+        <Button x:Name="draw_btn" Content="Draw" Click="draw_btn_Click" Margin="417,45,25,18" Grid.Row="1"/>
+        <TextBlock Text="x = {-250, 250}, y = {-150, 150}" Margin="25,6,305,72" Grid.Row="3"/>
+        <TextBlock x:Name="res_tb"  Margin="210,6,28,72" Grid.Row="1"/>
+    </Grid>
+</Window>

@@ -36,9 +36,9 @@ namespace DBApp
                 return;
             }
 
-            MessageBoxResult res = MessageBox.Show("Подтвердите удаление", "Удаление строки", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult res = MessageBox.Show("Подтвердите удаление", "Удаление строки", MessageBoxButton.OK);
 
-            if (res == MessageBoxResult.Yes)
+            if (res == MessageBoxResult.OK)
             {
                 db_cont.Orders.Remove(row);
                 db_cont.SaveChanges();
