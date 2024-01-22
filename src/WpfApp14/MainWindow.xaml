@@ -19,15 +19,7 @@
             <TextBlock Width="50" Height="20" Text="Точка d" Margin="0,0,50,0"/>
         </StackPanel>
         <StackPanel Height="24" VerticalAlignment="Top" Orientation="Horizontal" Margin="12,67,120,0" Grid.Row="3">
-            <TextBox x:Name="ax_tb" Width="25" Height="20" Margin="10,0,50,0">
-                <TextBox.Text>
-                    <Binding Path="NumberRange.ValidationResult" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <local:NumberRange MinValue="-250" MaxValue="250"/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
+            <TextBox x:Name="ax_tb" Width="25" Height="20" Margin="10,0,50,0"/>
             <TextBox x:Name="ay_tb" Width="25" Height="20" Margin="-50,0,0,0"/>
             <TextBox x:Name="bx_tb" Width="25" Height="20" Margin="23,0,50,0"/>
             <TextBox x:Name="by_tb" Width="25" Height="20" Margin="-36,0,50,0"/>

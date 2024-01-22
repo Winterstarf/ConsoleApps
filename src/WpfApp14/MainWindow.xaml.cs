@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using WpfApp14.classes;
 
 namespace WpfApp14
 {
@@ -30,10 +30,27 @@ namespace WpfApp14
                 main_cvs.Children.Clear();
                 res_tb.Text = "";
 
-                Point a = new Point(double.Parse(ax_tb.Text), double.Parse(ay_tb.Text));
-                Point b = new Point(double.Parse(bx_tb.Text), double.Parse(by_tb.Text));
-                Point c = new Point(double.Parse(cx_tb.Text), double.Parse(cy_tb.Text));
-                Point d = new Point(double.Parse(dx_tb.Text), double.Parse(dy_tb.Text));
+                if (double.Parse(ax_tb.Text) > 250 || double.Parse(ax_tb.Text) < -250 || !double.TryParse(ax_tb.Text, out double ax) || double.Parse(ay_tb.Text) > 150 || double.Parse(ay_tb.Text) < -150 || !double.TryParse(ay_tb.Text, out double ay))
+                {
+                    throw new Exception($"Значение точки a превышает лимиты или не является числом");
+                }
+                if (double.Parse(bx_tb.Text) > 250 || double.Parse(bx_tb.Text) < -250 || !double.TryParse(bx_tb.Text, out double bx) || double.Parse(by_tb.Text) > 150 || double.Parse(by_tb.Text) < -150 || !double.TryParse(by_tb.Text, out double by))
+                {
+                    throw new Exception($"Значение точки b превышает лимиты или не является числом");
+                }
+                if (double.Parse(cx_tb.Text) > 250 || double.Parse(cx_tb.Text) < -250 || !double.TryParse(cx_tb.Text, out double cx) || double.Parse(cy_tb.Text) > 150 || double.Parse(cy_tb.Text) < -150 || !double.TryParse(cy_tb.Text, out double cy))
+                {
+                    throw new Exception($"Значение точки c превышает лимиты или не является числом");
+                }
+                if (double.Parse(dx_tb.Text) > 250 || double.Parse(dx_tb.Text) < -250 || !double.TryParse(dx_tb.Text, out double dx) || double.Parse(dy_tb.Text) > 150 || double.Parse(dy_tb.Text) < -150 || !double.TryParse(dy_tb.Text, out double dy))
+                {
+                    throw new Exception($"Значение точки d превышает лимиты или не является числом");
+                }
+
+                Point a = new Point(ax, ay);
+                Point b = new Point(bx, by);
+                Point c = new Point(cx, cy);
+                Point d = new Point(dx, dy);
 
                 SolidColorBrush black = new SolidColorBrush(Colors.Black);
                 SolidColorBrush red = new SolidColorBrush(Colors.Red);
@@ -77,8 +94,6 @@ namespace WpfApp14
                 double dist1 = Math.Sqrt(Math.Pow(tb.X - ta.X, 2) + Math.Pow(tb.Y - ta.Y, 2));
                 double dist2 = Math.Sqrt(Math.Pow(td.X - tc.X, 2) + Math.Pow(td.Y - tc.Y, 2));
 
-                MessageBox.Show($"{ta}, {tb}, {tc}, {td}, {k1}, {k2}, {ix}, {iy}, {b1}, {b2}");
-
                 if (k1 == k2)
                 {
                     res_tb.Text = "Прямые параллельны";
@@ -101,6 +116,10 @@ namespace WpfApp14
                 }
 
                 res_tb.Text += $". Расстояние между a и b, с и d = {dist1}, {dist2}";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Одно/несколько из введённых значений - не число или пусто");
             }
             catch (Exception ex)
             {
