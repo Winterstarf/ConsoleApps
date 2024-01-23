@@ -32,7 +32,7 @@
             <Canvas x:Name="main_cvs" HorizontalAlignment="Center" VerticalAlignment="Center" Width="0" Height="0" MouseDown="main_cvs_MouseDown" Background="Azure" RenderTransform="1 0 0 -1 0 0"/>
         </Border>
         <Button x:Name="draw_btn" Content="Draw" Click="draw_btn_Click" Margin="417,45,25,18" Grid.Row="1"/>
-        <TextBlock Text="x = {-250, 250}, y = {-150, 150}" Margin="25,6,305,72" Grid.Row="3"/>
-        <TextBlock x:Name="res_tb"  Margin="210,6,28,72" Grid.Row="1"/>
+        <TextBlock Text="x = {-250, 250}, y = {-150, 150}" Margin="25,6,340,72" Grid.Row="1"/>
+        <TextBox x:Name="res_tb" Height="32" Width="300" Margin="210,6,28,62" Grid.Row="1" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"/>
     </Grid>
 </Window>
