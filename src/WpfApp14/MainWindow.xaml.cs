@@ -20,8 +20,8 @@ namespace WpfApp14
             SolidColorBrush red = new SolidColorBrush(Colors.Red);
 
             Line cl1 = new Line();
-            cl1.X1 = -3;
-            cl1.X2 = 3;
+            cl1.X1 = -250;
+            cl1.X2 = 250;
             cl1.Y1 = 0;
             cl1.Y2 = 0;
             cl1.StrokeThickness = 1;
@@ -30,8 +30,8 @@ namespace WpfApp14
             Line cl2 = new Line();
             cl2.X1 = 0;
             cl2.X2 = 0;
-            cl2.Y1 = -3;
-            cl2.Y2 = 3;
+            cl2.Y1 = -150;
+            cl2.Y2 = 150;
             cl2.StrokeThickness = 1;
             cl2.Stroke = black;
             main_cvs.Children.Add(cl2);
@@ -53,8 +53,8 @@ namespace WpfApp14
                 SolidColorBrush red = new SolidColorBrush(Colors.Red);
 
                 Line cl1 = new Line();
-                cl1.X1 = -3;
-                cl1.X2 = 3;
+                cl1.X1 = -250;
+                cl1.X2 = 250;
                 cl1.Y1 = 0;
                 cl1.Y2 = 0;
                 cl1.StrokeThickness = 1;
@@ -63,8 +63,8 @@ namespace WpfApp14
                 Line cl2 = new Line();
                 cl2.X1 = 0;
                 cl2.X2 = 0;
-                cl2.Y1 = -3;
-                cl2.Y2 = 3;
+                cl2.Y1 = -150;
+                cl2.Y2 = 150;
                 cl2.StrokeThickness = 1;
                 cl2.Stroke = black;
                 main_cvs.Children.Add(cl2);
@@ -124,7 +124,7 @@ namespace WpfApp14
                 double dist1 = Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
                 double dist2 = Math.Sqrt(Math.Pow(d.X - c.X, 2) + Math.Pow(d.Y - c.Y, 2));
 
-                string answer = $"Точка пер.в ({ Math.Round(ix, 2)}, { Math.Round(iy, 2)})";
+                string answer = $"Точка пер. в ({ Math.Round(ix, 2)}, { Math.Round(iy, 2)})";
 
                 //kostyly ktore dzialaja, nie wiem jak
                 if (k1 == k2) answer = "Прямые параллельны";
