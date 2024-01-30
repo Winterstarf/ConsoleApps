@@ -35,6 +35,38 @@ namespace WpfApp14
             cl2.StrokeThickness = 1;
             cl2.Stroke = black;
             main_cvs.Children.Add(cl2);
+            Line ar1 = new Line();
+            ar1.X1 = -5;
+            ar1.X2 = 0;
+            ar1.Y1 = 142;
+            ar1.Y2 = 150;
+            ar1.StrokeThickness = 1;
+            ar1.Stroke = black;
+            main_cvs.Children.Add(ar1);
+            Line ar2 = new Line();
+            ar2.X1 = 5;
+            ar2.X2 = 0;
+            ar2.Y1 = 142;
+            ar2.Y2 = 150;
+            ar2.StrokeThickness = 1;
+            ar2.Stroke = black;
+            main_cvs.Children.Add(ar2);
+            Line ar3 = new Line();
+            ar3.X1 = 242;
+            ar3.X2 = 250;
+            ar3.Y1 = -5;
+            ar3.Y2 = 0;
+            ar3.StrokeThickness = 1;
+            ar3.Stroke = black;
+            main_cvs.Children.Add(ar3);
+            Line ar4 = new Line();
+            ar4.X1 = 242;
+            ar4.X2 = 250;
+            ar4.Y1 = 5;
+            ar4.Y2 = 0;
+            ar4.StrokeThickness = 1;
+            ar4.Stroke = black;
+            main_cvs.Children.Add(ar4);
         }
 
         private void main_cvs_MouseDown(object sender, MouseButtonEventArgs e)
@@ -68,6 +100,38 @@ namespace WpfApp14
                 cl2.StrokeThickness = 1;
                 cl2.Stroke = black;
                 main_cvs.Children.Add(cl2);
+                Line ar1 = new Line();
+                ar1.X1 = -5;
+                ar1.X2 = 0;
+                ar1.Y1 = 142;
+                ar1.Y2 = 150;
+                ar1.StrokeThickness = 1;
+                ar1.Stroke = black;
+                main_cvs.Children.Add(ar1);
+                Line ar2 = new Line();
+                ar2.X1 = 5;
+                ar2.X2 = 0;
+                ar2.Y1 = 142;
+                ar2.Y2 = 150;
+                ar2.StrokeThickness = 1;
+                ar2.Stroke = black;
+                main_cvs.Children.Add(ar2);
+                Line ar3 = new Line();
+                ar3.X1 = 242;
+                ar3.X2 = 250;
+                ar3.Y1 = -5;
+                ar3.Y2 = 0;
+                ar3.StrokeThickness = 1;
+                ar3.Stroke = black;
+                main_cvs.Children.Add(ar3);
+                Line ar4 = new Line();
+                ar4.X1 = 242;
+                ar4.X2 = 250;
+                ar4.Y1 = 5;
+                ar4.Y2 = 0;
+                ar4.StrokeThickness = 1;
+                ar4.Stroke = black;
+                main_cvs.Children.Add(ar4);
 
                 if (double.Parse(ax_tb.Text) > 250 || double.Parse(ax_tb.Text) < -250 || !double.TryParse(ax_tb.Text, out double ax) || double.Parse(ay_tb.Text) > 150 || double.Parse(ay_tb.Text) < -150 || !double.TryParse(ay_tb.Text, out double ay))
                 {
@@ -124,7 +188,7 @@ namespace WpfApp14
                 double dist1 = Math.Sqrt(Math.Pow(b.X - a.X, 2) + Math.Pow(b.Y - a.Y, 2));
                 double dist2 = Math.Sqrt(Math.Pow(d.X - c.X, 2) + Math.Pow(d.Y - c.Y, 2));
 
-                string answer = $"Точка пер. в ({ Math.Round(ix, 2)}, { Math.Round(iy, 2)})";
+                string answer = $"Точка пер. в ({ Math.Round(ix, 2)}; { Math.Round(iy, 2)})";
 
                 //kostyly ktore dzialaja, nie wiem jak
                 if (k1 == k2) answer = "Прямые параллельны";
